@@ -1,9 +1,9 @@
 package com.hzzmonnet.aweyuki.data.theme
 
-import com.materialkolor.PaletteStyle
-import com.materialkolor.dynamiccolor.ColorSpec
 import com.hzzmonnet.aweyuki.data.AppSettingsRepository
 import com.hzzmonnet.aweyuki.domain.model.coerceCompatibleWith
+import com.materialkolor.PaletteStyle
+import com.materialkolor.dynamiccolor.ColorSpec
 
 class ThemeRepository(
     private val settings: AppSettingsRepository,

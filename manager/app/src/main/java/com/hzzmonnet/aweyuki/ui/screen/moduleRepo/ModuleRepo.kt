@@ -92,9 +92,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.CatalogAuthor
 import com.hzzmonnet.aweyuki.domain.model.CatalogModule
@@ -133,6 +130,9 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.CatalogContent
 import com.hzzmonnet.aweyuki.ui.viewmodel.ModuleRepoUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.ModuleRepoUiState
 import com.hzzmonnet.aweyuki.ui.viewmodel.ModuleRepoViewModel
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf

@@ -2,10 +2,10 @@ package com.hzzmonnet.aweyuki
 
 import android.app.Application
 import android.os.Build
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.runBlocking
 import com.hzzmonnet.aweyuki.di.appModules
 import com.hzzmonnet.aweyuki.domain.usecase.InitializeApplicationUseCase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

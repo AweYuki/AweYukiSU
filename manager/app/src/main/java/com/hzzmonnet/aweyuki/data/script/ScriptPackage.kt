@@ -1,6 +1,7 @@
 package com.hzzmonnet.aweyuki.data.script
 
 import androidx.annotation.StringRes
+import com.hzzmonnet.aweyuki.R
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -13,7 +14,6 @@ import java.util.UUID
 import java.util.zip.ZipInputStream
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry
 import org.apache.commons.compress.archivers.zip.ZipFile
-import com.hzzmonnet.aweyuki.R
 
 class ScriptPackageException(val reason: Reason, message: String, cause: Throwable? = null) : IOException(message, cause) {
     enum class Reason(@param:StringRes val resId: Int) {

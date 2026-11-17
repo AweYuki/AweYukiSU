@@ -52,8 +52,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.ui.component.ConfirmResult
 import com.hzzmonnet.aweyuki.ui.component.SwipeableSnackbarHost
@@ -74,6 +72,8 @@ import com.hzzmonnet.aweyuki.ui.util.showReplacingSnackbar
 import com.hzzmonnet.aweyuki.ui.viewmodel.UmountManagerScreenViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.UmountManagerUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.UmountManagerUiEvent
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 

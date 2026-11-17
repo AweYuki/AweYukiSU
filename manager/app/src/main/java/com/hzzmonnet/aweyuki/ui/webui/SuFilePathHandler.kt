@@ -5,14 +5,14 @@ import android.util.Log
 import android.webkit.WebResourceResponse
 import androidx.annotation.WorkerThread
 import androidx.webkit.WebViewAssetLoader
+import com.hzzmonnet.aweyuki.data.webui.WebUiRepository
+import com.hzzmonnet.aweyuki.ui.webui.SuFilePathHandler.Companion.DEFAULT_MIME_TYPE
 import java.io.ByteArrayInputStream
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
 import java.nio.charset.StandardCharsets
 import java.util.zip.GZIPInputStream
-import com.hzzmonnet.aweyuki.data.webui.WebUiRepository
-import com.hzzmonnet.aweyuki.ui.webui.SuFilePathHandler.Companion.DEFAULT_MIME_TYPE
 
 /**
  * Handler class to open files from file system by root access

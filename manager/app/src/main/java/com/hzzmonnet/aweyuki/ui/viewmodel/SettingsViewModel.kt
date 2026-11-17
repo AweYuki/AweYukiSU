@@ -3,17 +3,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.materialkolor.PaletteStyle
-import com.materialkolor.dynamiccolor.ColorSpec
-import java.util.Locale
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AppearanceSetting
 import com.hzzmonnet.aweyuki.domain.model.PlatformSetting
@@ -30,6 +19,17 @@ import com.hzzmonnet.aweyuki.domain.usecase.SetShellSuAdbOnlyEnabledUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.SetSuEnabledUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.UpdateAppearanceUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.UpdatePlatformSettingUseCase
+import com.materialkolor.PaletteStyle
+import com.materialkolor.dynamiccolor.ColorSpec
+import java.util.Locale
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 enum class PredictiveBackAnimation(val value: String, @param:StringRes val resId: Int) {
     None("none", R.string.predictive_back_animation_none),

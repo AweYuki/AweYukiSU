@@ -2,10 +2,10 @@ package com.hzzmonnet.aweyuki.ui.component
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
-import java.text.DateFormat
-import java.util.Date
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.data.script.ScriptRunRecord
+import java.text.DateFormat
+import java.util.Date
 
 @Composable
 fun scriptLastRunText(record: ScriptRunRecord?): String {

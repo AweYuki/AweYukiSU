@@ -31,8 +31,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.ui.activity.component.NavigationBar
 import com.hzzmonnet.aweyuki.ui.component.HorizontalPagerWithInteraction
 import com.hzzmonnet.aweyuki.ui.rememberMaterial3BlurBackdrop
@@ -46,6 +44,8 @@ import com.hzzmonnet.aweyuki.ui.util.LocalPortraitState
 import com.hzzmonnet.aweyuki.ui.util.LocalSelectedPage
 import com.hzzmonnet.aweyuki.ui.util.LocalSnackbarHost
 import com.hzzmonnet.aweyuki.ui.viewmodel.HomeViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 import top.yukonga.miuix.kmp.utils.PagerGestureNestedScrollConnection

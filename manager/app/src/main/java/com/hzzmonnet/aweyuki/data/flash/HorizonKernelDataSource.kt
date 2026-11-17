@@ -3,6 +3,9 @@ package com.hzzmonnet.aweyuki.data.flash
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import com.hzzmonnet.aweyuki.R
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.FlashProgress
 import java.io.File
 import java.io.IOException
 import java.util.concurrent.ConcurrentLinkedQueue
@@ -10,9 +13,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import com.hzzmonnet.aweyuki.R
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.FlashProgress
 
 /**
  * @author ShirkNeko

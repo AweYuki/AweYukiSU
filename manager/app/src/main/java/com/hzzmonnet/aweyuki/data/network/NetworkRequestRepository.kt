@@ -1,5 +1,7 @@
 package com.hzzmonnet.aweyuki.data.network
 
+import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
+import com.hzzmonnet.aweyuki.domain.model.HttpStatusException
 import java.util.concurrent.TimeUnit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -7,8 +9,6 @@ import okhttp3.CacheControl
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okio.Buffer
-import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
-import com.hzzmonnet.aweyuki.domain.model.HttpStatusException
 
 data class NetworkResponse(
     val body: String?,

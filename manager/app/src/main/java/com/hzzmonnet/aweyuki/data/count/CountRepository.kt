@@ -1,12 +1,12 @@
 package com.hzzmonnet.aweyuki.data.count
 
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 
 data class CountState(
     val superuserCount: Int = 0,

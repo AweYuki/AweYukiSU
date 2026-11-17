@@ -2,6 +2,17 @@ package com.hzzmonnet.aweyuki.data.module
 
 import android.os.SystemClock
 import android.util.LruCache
+import com.hzzmonnet.aweyuki.data.network.NetworkRequestRepository
+import com.hzzmonnet.aweyuki.data.network.NetworkResponse
+import com.hzzmonnet.aweyuki.data.network.toDocument
+import com.hzzmonnet.aweyuki.domain.model.CatalogModule
+import com.hzzmonnet.aweyuki.domain.model.DocumentFormat
+import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
+import com.hzzmonnet.aweyuki.domain.model.ModuleReadme
+import com.hzzmonnet.aweyuki.domain.model.ModuleRelease
+import com.hzzmonnet.aweyuki.domain.model.ModuleReleaseDetails
+import com.hzzmonnet.aweyuki.domain.model.RepositorySource
+import com.hzzmonnet.aweyuki.domain.model.documentPolicy
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
@@ -18,17 +29,6 @@ import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.sync.withPermit
 import kotlinx.coroutines.withContext
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
-import com.hzzmonnet.aweyuki.data.network.NetworkRequestRepository
-import com.hzzmonnet.aweyuki.data.network.NetworkResponse
-import com.hzzmonnet.aweyuki.data.network.toDocument
-import com.hzzmonnet.aweyuki.domain.model.CatalogModule
-import com.hzzmonnet.aweyuki.domain.model.DocumentFormat
-import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
-import com.hzzmonnet.aweyuki.domain.model.ModuleReadme
-import com.hzzmonnet.aweyuki.domain.model.ModuleRelease
-import com.hzzmonnet.aweyuki.domain.model.ModuleReleaseDetails
-import com.hzzmonnet.aweyuki.domain.model.RepositorySource
-import com.hzzmonnet.aweyuki.domain.model.documentPolicy
 import org.json.JSONObject
 
 /** Resolves presentation metadata without changing the selected repository's downloadable assets. */

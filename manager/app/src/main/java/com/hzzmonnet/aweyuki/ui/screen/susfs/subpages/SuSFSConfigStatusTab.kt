@@ -34,7 +34,6 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.SuSFSStatusInfo
 import com.hzzmonnet.aweyuki.ui.component.WarningCard
@@ -50,6 +49,7 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.SuSFSUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.SuSFSViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.awaitSuSFSBoolean
 import com.hzzmonnet.aweyuki.ui.viewmodel.awaitSuSFSStatusInfo
+import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)

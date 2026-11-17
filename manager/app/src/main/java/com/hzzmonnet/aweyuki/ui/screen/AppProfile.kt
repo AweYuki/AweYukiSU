@@ -58,8 +58,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.compose.dropUnlessResumed
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AppControlAction
 import com.hzzmonnet.aweyuki.domain.model.AppProfile
@@ -91,6 +89,8 @@ import com.hzzmonnet.aweyuki.ui.util.showReplacingSnackbar
 import com.hzzmonnet.aweyuki.ui.viewmodel.AppProfileUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.AppProfileUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.AppProfileViewModel
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf

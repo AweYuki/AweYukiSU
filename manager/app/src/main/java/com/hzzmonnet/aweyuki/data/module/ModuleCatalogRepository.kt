@@ -1,20 +1,5 @@
 package com.hzzmonnet.aweyuki.data.module
 
-import java.io.IOException
-import java.util.Base64
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.async
-import kotlinx.coroutines.awaitAll
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import kotlinx.coroutines.withContext
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import com.hzzmonnet.aweyuki.data.module.registry.KernelSuRegistryRepository
 import com.hzzmonnet.aweyuki.data.module.registry.ModuleNotInIndexException
 import com.hzzmonnet.aweyuki.data.module.registry.RegistryCatalogMapper
@@ -34,6 +19,21 @@ import com.hzzmonnet.aweyuki.domain.model.RepositoryException
 import com.hzzmonnet.aweyuki.domain.model.RepositoryFailure
 import com.hzzmonnet.aweyuki.domain.model.RepositorySource
 import com.hzzmonnet.aweyuki.domain.model.documentPolicy
+import java.io.IOException
+import java.util.Base64
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import org.json.JSONObject
 
 data class RepositoryFeed(val source: RepositorySource, val modules: List<CatalogModule>, val error: RepositoryFailure? = null, val registryBuildId: String? = null)

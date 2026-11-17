@@ -4,14 +4,14 @@ import android.content.Context
 import android.os.Build
 import android.system.Os
 import androidx.core.content.pm.PackageInfoCompat
+import com.hzzmonnet.aweyuki.Natives
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 import com.topjohnwu.superuser.ShellUtils
 import java.io.File
 import java.io.FileWriter
 import java.io.PrintWriter
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import com.hzzmonnet.aweyuki.Natives
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 
 fun getManagerVersion(context: Context): Pair<String, Long> {
     val packageInfo = context.packageManager.getPackageInfo(context.packageName, 0)!!

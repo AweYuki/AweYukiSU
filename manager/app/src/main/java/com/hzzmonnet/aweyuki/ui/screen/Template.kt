@@ -63,7 +63,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.getSystemService
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.compose.dropUnlessResumed
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.ProfileTemplate
 import com.hzzmonnet.aweyuki.ui.component.NetworkRefreshContent
@@ -82,6 +81,7 @@ import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateViewModel
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 

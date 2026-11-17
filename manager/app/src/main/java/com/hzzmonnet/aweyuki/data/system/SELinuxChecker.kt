@@ -1,9 +1,9 @@
 package com.hzzmonnet.aweyuki.data.system
 
 import android.content.Context
+import com.hzzmonnet.aweyuki.R
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.io.SuFile
-import com.hzzmonnet.aweyuki.R
 
 fun isSELinuxPermissive(): Boolean {
     val shell = Shell.Builder.create().build("sh")

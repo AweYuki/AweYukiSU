@@ -1,6 +1,10 @@
 package com.hzzmonnet.aweyuki.data.logging
 
 import android.os.SystemClock
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.SulogFile
+import com.hzzmonnet.aweyuki.domain.model.SulogState
+import com.hzzmonnet.aweyuki.domain.model.parseSulogLines
 import com.topjohnwu.superuser.io.SuFile
 import com.topjohnwu.superuser.io.SuFileInputStream
 import java.io.InputStreamReader
@@ -16,10 +20,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.SulogFile
-import com.hzzmonnet.aweyuki.domain.model.SulogState
-import com.hzzmonnet.aweyuki.domain.model.parseSulogLines
 
 class SulogRepository(
     private val ksuCliRepository: KsuCliRepository,

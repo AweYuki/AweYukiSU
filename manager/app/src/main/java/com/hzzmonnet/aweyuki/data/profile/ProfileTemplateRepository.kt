@@ -1,14 +1,5 @@
 package com.hzzmonnet.aweyuki.data.profile
 
-import java.text.Collator
-import java.util.Locale
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.Natives
 import com.hzzmonnet.aweyuki.Natives.Profile.Namespace
 import com.hzzmonnet.aweyuki.Natives.Profile.RootProfileFlag
@@ -20,6 +11,15 @@ import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateException
 import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateFailure
 import com.hzzmonnet.aweyuki.profile.Capabilities
 import com.hzzmonnet.aweyuki.profile.Groups
+import java.text.Collator
+import java.util.Locale
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import kotlinx.coroutines.withContext
 import org.json.JSONArray
 import org.json.JSONObject
 

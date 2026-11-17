@@ -2,6 +2,12 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.model.FlashProgress
+import com.hzzmonnet.aweyuki.domain.usecase.GetBooleanPreferenceUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ObserveKernelFlashUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.RebootUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.RemovePreferenceUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.StartKernelFlashUseCase
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -11,12 +17,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.domain.model.FlashProgress
-import com.hzzmonnet.aweyuki.domain.usecase.GetBooleanPreferenceUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ObserveKernelFlashUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.RebootUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.RemovePreferenceUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.StartKernelFlashUseCase
 
 data class KernelFlashUiState(
     val requestUri: String? = null,

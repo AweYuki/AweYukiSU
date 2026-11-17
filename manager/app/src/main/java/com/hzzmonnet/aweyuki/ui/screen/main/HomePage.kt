@@ -81,11 +81,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlin.time.Duration.Companion.milliseconds
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.BuildConfig
 import com.hzzmonnet.aweyuki.Natives.KernelPatchImplementation
 import com.hzzmonnet.aweyuki.R
@@ -117,6 +112,11 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.HomeUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.HomeUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.HomeUiState
 import com.hzzmonnet.aweyuki.ui.viewmodel.HomeViewModel
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 

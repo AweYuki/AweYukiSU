@@ -1,11 +1,11 @@
 package com.hzzmonnet.aweyuki.data.module.registry
 
+import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
 import java.security.MessageDigest
-import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 
 class DownloadVerificationException(val reason: Reason, message: String) : IOException(message) {
     enum class Reason { URL_NOT_ALLOWED, SIZE_MISMATCH, SHA256_MISMATCH }

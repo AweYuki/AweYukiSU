@@ -12,6 +12,19 @@ import android.os.Environment
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.core.content.FileProvider
+import com.hzzmonnet.aweyuki.BuildConfig
+import com.hzzmonnet.aweyuki.R
+import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerificationException
+import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerifier
+import com.hzzmonnet.aweyuki.data.module.registry.RegistryDownloadStore
+import com.hzzmonnet.aweyuki.data.module.registry.RegistryUrls
+import com.hzzmonnet.aweyuki.data.settings.SettingsPlatformRepository
+import com.hzzmonnet.aweyuki.data.update.ManagerUpdateRepository
+import com.hzzmonnet.aweyuki.data.update.ZipRangeArchive
+import com.hzzmonnet.aweyuki.domain.model.DownloadStatus
+import com.hzzmonnet.aweyuki.domain.model.DownloadVerificationFailure
+import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
+import com.hzzmonnet.aweyuki.ui.MainActivity
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -29,19 +42,6 @@ import kotlinx.coroutines.launch
 import okhttp3.Call
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import com.hzzmonnet.aweyuki.BuildConfig
-import com.hzzmonnet.aweyuki.R
-import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerificationException
-import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerifier
-import com.hzzmonnet.aweyuki.data.module.registry.RegistryDownloadStore
-import com.hzzmonnet.aweyuki.data.module.registry.RegistryUrls
-import com.hzzmonnet.aweyuki.data.settings.SettingsPlatformRepository
-import com.hzzmonnet.aweyuki.data.update.ManagerUpdateRepository
-import com.hzzmonnet.aweyuki.data.update.ZipRangeArchive
-import com.hzzmonnet.aweyuki.domain.model.DownloadStatus
-import com.hzzmonnet.aweyuki.domain.model.DownloadVerificationFailure
-import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
-import com.hzzmonnet.aweyuki.ui.MainActivity
 import org.koin.android.ext.android.inject
 
 class DownloadService : Service() {

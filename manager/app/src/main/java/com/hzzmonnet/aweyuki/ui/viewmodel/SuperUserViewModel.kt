@@ -3,17 +3,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AllowlistOperationResult
 import com.hzzmonnet.aweyuki.domain.model.InstalledAppGroup
@@ -28,6 +17,17 @@ import com.hzzmonnet.aweyuki.domain.usecase.RefreshSuperUsersUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.SetBooleanPreferenceUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.SetStringPreferenceUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.TransliterateTextUseCase
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 enum class SortType(@param:StringRes val displayNameRes: Int, val persistKey: String) {
     NAME(R.string.sort_name, "NAME"),

@@ -9,7 +9,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.collectLatest
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.ui.component.ModuleActionOutput
 import com.hzzmonnet.aweyuki.ui.navigation.LocalNavigator
@@ -18,6 +17,7 @@ import com.hzzmonnet.aweyuki.ui.util.showReplacingSnackbar
 import com.hzzmonnet.aweyuki.ui.viewmodel.ExecuteModuleActionUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.ExecuteModuleActionUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.ExecuteModuleActionViewModel
+import kotlinx.coroutines.flow.collectLatest
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf
 

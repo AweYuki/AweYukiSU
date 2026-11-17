@@ -2,6 +2,13 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.model.ProfileTemplate
+import com.hzzmonnet.aweyuki.domain.usecase.ExportProfileTemplatesUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ImportProfileTemplatesUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplateOfflineUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplateRefreshingUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplatesUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.RefreshProfileTemplatesUseCase
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -10,13 +17,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.domain.model.ProfileTemplate
-import com.hzzmonnet.aweyuki.domain.usecase.ExportProfileTemplatesUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ImportProfileTemplatesUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplateOfflineUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplateRefreshingUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ObserveProfileTemplatesUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.RefreshProfileTemplatesUseCase
 
 data class TemplateUiState(
     val templateList: List<ProfileTemplate> = emptyList(),

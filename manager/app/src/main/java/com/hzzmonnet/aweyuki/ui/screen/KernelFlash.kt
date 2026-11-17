@@ -14,9 +14,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlin.time.Duration.Companion.milliseconds
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collectLatest
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.ui.component.FlashOutputScreen
 import com.hzzmonnet.aweyuki.ui.navigation.LocalNavigator
@@ -27,6 +24,9 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.FlashingStatus
 import com.hzzmonnet.aweyuki.ui.viewmodel.KernelFlashUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.KernelFlashUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.KernelFlashViewModel
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 import org.koin.compose.viewmodel.koinViewModel
 
 /**

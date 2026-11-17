@@ -8,6 +8,8 @@ import android.content.pm.PackageInfo
 import android.os.IBinder
 import android.os.RemoteException
 import androidx.core.content.ContextCompat
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.SuperUserLoadFailure
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.ipc.RootService
 import java.io.IOException
@@ -22,8 +24,6 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.SuperUserLoadFailure
 import org.aweyukisu.rootService.IKsuInterface
 
 class RootServiceException(val reason: SuperUserLoadFailure, cause: Throwable? = null) : IOException(reason.name, cause)

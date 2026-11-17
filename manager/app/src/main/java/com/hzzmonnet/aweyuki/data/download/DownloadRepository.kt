@@ -3,11 +3,6 @@ package com.hzzmonnet.aweyuki.data.download
 import android.app.Application
 import android.content.Intent
 import androidx.core.content.ContextCompat
-import java.util.concurrent.atomic.AtomicInteger
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
 import com.hzzmonnet.aweyuki.data.module.registry.RegistryUrls
 import com.hzzmonnet.aweyuki.data.module.registry.canShareDownload
 import com.hzzmonnet.aweyuki.domain.model.DownloadState
@@ -16,6 +11,11 @@ import com.hzzmonnet.aweyuki.domain.model.DownloadVerificationFailure
 import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 import com.hzzmonnet.aweyuki.domain.model.ManagerApkSource
 import com.hzzmonnet.aweyuki.domain.model.ManagerUpdateInfo
+import java.util.concurrent.atomic.AtomicInteger
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class DownloadRepository(
     private val application: Application,

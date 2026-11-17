@@ -61,9 +61,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigationevent.NavigationEventInfo
 import androidx.navigationevent.compose.NavigationBackHandler
 import androidx.navigationevent.compose.rememberNavigationEventState
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerificationException
 import com.hzzmonnet.aweyuki.data.script.ParamError
@@ -96,6 +93,9 @@ import com.hzzmonnet.aweyuki.ui.util.showReplacingSnackbar
 import com.hzzmonnet.aweyuki.ui.viewmodel.ScriptRunPhase
 import com.hzzmonnet.aweyuki.ui.viewmodel.ScriptRunUiState
 import com.hzzmonnet.aweyuki.ui.viewmodel.ScriptRunViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 import org.koin.core.parameter.parametersOf

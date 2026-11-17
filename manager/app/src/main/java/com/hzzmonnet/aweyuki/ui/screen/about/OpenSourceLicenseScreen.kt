@@ -47,12 +47,6 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.DialogProperties
-import com.mikepenz.aboutlibraries.Libs
-import com.mikepenz.aboutlibraries.entity.Library
-import com.mikepenz.aboutlibraries.ui.compose.util.author
-import com.mikepenz.aboutlibraries.util.withJson
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.ui.component.WarningCard
 import com.hzzmonnet.aweyuki.ui.component.settings.AppBackButton
@@ -65,6 +59,12 @@ import com.hzzmonnet.aweyuki.ui.theme.ThemeConfig
 import com.hzzmonnet.aweyuki.ui.theme.blurEffect
 import com.hzzmonnet.aweyuki.ui.theme.blurSource
 import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
+import com.mikepenz.aboutlibraries.Libs
+import com.mikepenz.aboutlibraries.entity.Library
+import com.mikepenz.aboutlibraries.ui.compose.util.author
+import com.mikepenz.aboutlibraries.util.withJson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.koin.compose.koinInject
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)

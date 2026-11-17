@@ -69,6 +69,10 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.window.PopupPositionProvider
+import com.hzzmonnet.aweyuki.R
+import com.hzzmonnet.aweyuki.ui.component.KeyPointSlider
+import com.hzzmonnet.aweyuki.ui.theme.KernelSUTheme
+import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 import com.yalantis.ucrop.UCrop
 import com.yalantis.ucrop.callback.BitmapCropCallback
 import com.yalantis.ucrop.view.OverlayView
@@ -77,10 +81,6 @@ import com.yalantis.ucrop.view.UCropView
 import java.io.Serializable
 import kotlin.math.max
 import kotlin.math.min
-import com.hzzmonnet.aweyuki.R
-import com.hzzmonnet.aweyuki.ui.component.KeyPointSlider
-import com.hzzmonnet.aweyuki.ui.theme.KernelSUTheme
-import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 
 class BackgroundCropActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

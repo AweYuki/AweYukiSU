@@ -3,6 +3,13 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 import androidx.compose.runtime.Immutable
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.model.DynamicManagerApp
+import com.hzzmonnet.aweyuki.domain.model.DynamicManagerConfig
+import com.hzzmonnet.aweyuki.domain.usecase.ClearDynamicManagerUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.ObserveDynamicManagerStateUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.RefreshDynamicManagerUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.SelectDynamicManagerUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.SetManualDynamicManagerUseCase
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -12,13 +19,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.domain.model.DynamicManagerApp
-import com.hzzmonnet.aweyuki.domain.model.DynamicManagerConfig
-import com.hzzmonnet.aweyuki.domain.usecase.ClearDynamicManagerUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.ObserveDynamicManagerStateUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.RefreshDynamicManagerUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.SelectDynamicManagerUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.SetManualDynamicManagerUseCase
 
 typealias DynamicManagerAppItem = DynamicManagerApp
 

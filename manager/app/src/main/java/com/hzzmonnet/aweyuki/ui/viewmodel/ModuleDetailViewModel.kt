@@ -2,15 +2,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.domain.model.CatalogModule
 import com.hzzmonnet.aweyuki.domain.model.ModuleCatalogFailure
 import com.hzzmonnet.aweyuki.domain.model.ModuleCatalogResult
@@ -26,6 +17,15 @@ import com.hzzmonnet.aweyuki.domain.usecase.IsCatalogModuleCurrentUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.ObserveCatalogModulesUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.ObserveRepositorySourcesUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.RefreshModuleCatalogUseCase
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 data class ModuleDetailUiState(
     val module: CatalogModule? = null,

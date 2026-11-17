@@ -2,18 +2,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import java.text.Collator
-import java.util.Locale
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.data.module.ModulePreferencesRepository
 import com.hzzmonnet.aweyuki.domain.model.InstalledModule
 import com.hzzmonnet.aweyuki.domain.model.MetaModuleStatus
@@ -30,6 +18,18 @@ import com.hzzmonnet.aweyuki.domain.usecase.SetModuleEnabledUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.SetModuleRemovedUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.TransliterateTextUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.UpdateCachedModuleEnabledUseCase
+import java.text.Collator
+import java.util.Locale
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 data class ModuleUiState(
     val moduleList: List<InstalledModule> = emptyList(),

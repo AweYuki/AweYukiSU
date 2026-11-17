@@ -72,8 +72,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.launch
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.RepositoryApiType
 import com.hzzmonnet.aweyuki.domain.model.RepositorySource
@@ -97,6 +95,8 @@ import com.hzzmonnet.aweyuki.ui.util.LocalBackgroundBlurProvided
 import com.hzzmonnet.aweyuki.ui.util.LocalSnackbarHost
 import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 import com.hzzmonnet.aweyuki.ui.viewmodel.RepositorySourcesViewModel
+import kotlinx.coroutines.launch
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 

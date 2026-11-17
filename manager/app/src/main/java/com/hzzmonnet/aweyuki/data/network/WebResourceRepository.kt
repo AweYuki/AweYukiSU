@@ -1,10 +1,10 @@
 package com.hzzmonnet.aweyuki.data.network
 
+import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
+import com.hzzmonnet.aweyuki.domain.model.WebResource
 import okhttp3.Headers.Companion.toHeaders
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
-import com.hzzmonnet.aweyuki.domain.model.WebResource
 
 class WebResourceRepository(private val httpClient: OkHttpClient) {
     fun load(url: String, method: String, requestHeaders: Map<String, String>, policy: DocumentPolicy): WebResource? = runCatching {

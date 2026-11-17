@@ -59,11 +59,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AllowlistOperationResult
 import com.hzzmonnet.aweyuki.domain.model.InstalledAppGroup
@@ -91,6 +86,11 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.SuperUserUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.SuperUserUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.SuperUserUiState
 import com.hzzmonnet.aweyuki.ui.viewmodel.SuperUserViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 private data class SuperUserMenuItem(

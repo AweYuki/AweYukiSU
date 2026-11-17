@@ -45,8 +45,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.DynamicManagerConfig
 import com.hzzmonnet.aweyuki.ui.component.ConfirmResult
@@ -72,6 +70,8 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.DynamicManagerOperation
 import com.hzzmonnet.aweyuki.ui.viewmodel.DynamicManagerUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.DynamicManagerUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.DynamicManagerViewModel
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalMaterial3ExpressiveApi::class)

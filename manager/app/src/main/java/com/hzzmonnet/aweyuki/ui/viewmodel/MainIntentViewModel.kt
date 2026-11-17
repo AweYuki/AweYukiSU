@@ -2,6 +2,7 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.usecase.GetInstallEnvironmentUseCase
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -10,7 +11,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.domain.usecase.GetInstallEnvironmentUseCase
 
 data class MainIntentUiState(
     val rootAvailable: Boolean = false,

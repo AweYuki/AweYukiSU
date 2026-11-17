@@ -1,16 +1,6 @@
 package com.hzzmonnet.aweyuki.di
 
 import coil.ImageLoader
-import java.io.File
-import java.util.Locale
-import java.util.concurrent.TimeUnit
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import me.zhanghai.android.appiconloader.coil.AppIconFetcher
-import me.zhanghai.android.appiconloader.coil.AppIconKeyer
-import okhttp3.Cache
-import okhttp3.OkHttpClient
 import com.hzzmonnet.aweyuki.BuildConfig
 import com.hzzmonnet.aweyuki.data.AppSettingsRepository
 import com.hzzmonnet.aweyuki.data.application.ApplicationControlRepository
@@ -197,6 +187,16 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateEditorViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.UmountManagerScreenViewModel
 import com.hzzmonnet.aweyuki.ui.webui.MonetColorsProvider
+import java.io.File
+import java.util.Locale
+import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import me.zhanghai.android.appiconloader.coil.AppIconFetcher
+import me.zhanghai.android.appiconloader.coil.AppIconKeyer
+import okhttp3.Cache
+import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidApplication
 import org.koin.core.module.dsl.factoryOf
 import org.koin.core.module.dsl.singleOf

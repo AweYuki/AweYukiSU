@@ -4,8 +4,6 @@ import com.google.gson.GsonBuilder
 import com.google.gson.JsonParseException
 import com.google.gson.Strictness
 import com.google.gson.reflect.TypeToken
-import java.time.Instant
-import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import com.hzzmonnet.aweyuki.domain.model.CatalogAuthor
 import com.hzzmonnet.aweyuki.domain.model.CatalogModule
 import com.hzzmonnet.aweyuki.domain.model.ModuleRelease
@@ -13,6 +11,8 @@ import com.hzzmonnet.aweyuki.domain.model.ModuleReleaseAsset
 import com.hzzmonnet.aweyuki.domain.model.RepositoryError
 import com.hzzmonnet.aweyuki.domain.model.RepositoryException
 import com.hzzmonnet.aweyuki.domain.model.RepositorySource
+import java.time.Instant
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 
 object MmrlRepositoryParser {
     private val gson = GsonBuilder().setStrictness(Strictness.STRICT).create()

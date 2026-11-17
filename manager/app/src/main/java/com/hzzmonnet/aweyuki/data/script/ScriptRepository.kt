@@ -4,6 +4,13 @@ import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
 import android.util.Log
+import com.hzzmonnet.aweyuki.BuildConfig
+import com.hzzmonnet.aweyuki.Natives
+import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerificationException
+import com.hzzmonnet.aweyuki.data.module.registry.RegistryDownloadStore
+import com.hzzmonnet.aweyuki.data.module.registry.copyForInstall
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
@@ -25,13 +32,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.BuildConfig
-import com.hzzmonnet.aweyuki.Natives
-import com.hzzmonnet.aweyuki.data.module.registry.DownloadVerificationException
-import com.hzzmonnet.aweyuki.data.module.registry.RegistryDownloadStore
-import com.hzzmonnet.aweyuki.data.module.registry.copyForInstall
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 
 /** A validated script, extracted and ready to run. */
 data class PreparedScript(

@@ -44,7 +44,6 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.compose.dropUnlessResumed
-import kotlinx.coroutines.flow.collectLatest
 import com.hzzmonnet.aweyuki.Natives.Profile.RootProfileFlag
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AppProfile
@@ -63,6 +62,7 @@ import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateEditorUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateEditorUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateEditorViewModel
+import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.compose.koinViewModel
 import org.koin.core.parameter.parametersOf
 

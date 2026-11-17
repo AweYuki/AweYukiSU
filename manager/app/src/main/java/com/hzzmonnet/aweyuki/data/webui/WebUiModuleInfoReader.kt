@@ -1,9 +1,9 @@
 package com.hzzmonnet.aweyuki.data.webui
 
+import com.hzzmonnet.aweyuki.domain.model.WebUiModuleInfo
 import java.io.File
 import java.io.InputStream
 import java.util.Properties
-import com.hzzmonnet.aweyuki.domain.model.WebUiModuleInfo
 
 internal fun readWebUiModuleInfo(
     moduleId: String,

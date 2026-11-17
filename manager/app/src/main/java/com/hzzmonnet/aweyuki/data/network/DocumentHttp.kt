@@ -1,5 +1,8 @@
 package com.hzzmonnet.aweyuki.data.network
 
+import com.hzzmonnet.aweyuki.domain.model.DocumentFormat
+import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
+import com.hzzmonnet.aweyuki.domain.model.ModuleReadme
 import java.io.IOException
 import java.net.InetAddress
 import java.net.SocketTimeoutException
@@ -11,9 +14,6 @@ import okhttp3.Dns
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
-import com.hzzmonnet.aweyuki.domain.model.DocumentFormat
-import com.hzzmonnet.aweyuki.domain.model.DocumentPolicy
-import com.hzzmonnet.aweyuki.domain.model.ModuleReadme
 
 /** Redirects are checked even when the response comes from the HTTP cache. */
 internal fun OkHttpClient.documentResponse(initial: Request, policy: DocumentPolicy, callTimeoutSeconds: Long? = null, onCall: (Call) -> Unit = {}): Response {

@@ -7,6 +7,16 @@ import android.content.pm.PackageManager
 import android.os.Build
 import android.util.Log
 import androidx.core.net.toUri
+import com.hzzmonnet.aweyuki.data.profile.AppProfileKey
+import com.hzzmonnet.aweyuki.data.profile.ProfileRepository
+import com.hzzmonnet.aweyuki.domain.model.AllowlistOperationResult
+import com.hzzmonnet.aweyuki.domain.model.AllowlistRestoreResult
+import com.hzzmonnet.aweyuki.domain.model.InstalledApp
+import com.hzzmonnet.aweyuki.domain.model.InstalledAppGroup
+import com.hzzmonnet.aweyuki.domain.model.SuperUserLoadFailure
+import com.hzzmonnet.aweyuki.domain.model.SuperUserState
+import com.hzzmonnet.aweyuki.domain.model.WEBVIEW_ZYGOTE_PROFILE_KEY
+import com.hzzmonnet.aweyuki.domain.model.WEBVIEW_ZYGOTE_UID
 import com.topjohnwu.superuser.io.SuFile
 import com.topjohnwu.superuser.io.SuFileInputStream
 import kotlinx.coroutines.CancellationException
@@ -21,16 +31,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.profile.AppProfileKey
-import com.hzzmonnet.aweyuki.data.profile.ProfileRepository
-import com.hzzmonnet.aweyuki.domain.model.AllowlistOperationResult
-import com.hzzmonnet.aweyuki.domain.model.AllowlistRestoreResult
-import com.hzzmonnet.aweyuki.domain.model.InstalledApp
-import com.hzzmonnet.aweyuki.domain.model.InstalledAppGroup
-import com.hzzmonnet.aweyuki.domain.model.SuperUserLoadFailure
-import com.hzzmonnet.aweyuki.domain.model.SuperUserState
-import com.hzzmonnet.aweyuki.domain.model.WEBVIEW_ZYGOTE_PROFILE_KEY
-import com.hzzmonnet.aweyuki.domain.model.WEBVIEW_ZYGOTE_UID
 
 class SuperUserRepository(
     private val application: Application,

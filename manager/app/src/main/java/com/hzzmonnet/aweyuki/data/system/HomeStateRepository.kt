@@ -1,10 +1,10 @@
 package com.hzzmonnet.aweyuki.data.system
 
+import com.hzzmonnet.aweyuki.domain.model.HomeDashboardState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import com.hzzmonnet.aweyuki.domain.model.HomeDashboardState
 
 class HomeStateRepository {
     private val mutableState = MutableStateFlow(HomeDashboardState())

@@ -2,16 +2,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.MutableSharedFlow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asSharedFlow
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.domain.model.SulogEntry
 import com.hzzmonnet.aweyuki.domain.model.SulogEventFilter
 import com.hzzmonnet.aweyuki.domain.model.SulogFile
@@ -23,6 +13,16 @@ import com.hzzmonnet.aweyuki.domain.usecase.GetStringSetPreferenceUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.ObserveSulogStateUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.RefreshSulogUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.SetStringSetPreferenceUseCase
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 data class SulogScreenState(
     val isLoading: Boolean = true,

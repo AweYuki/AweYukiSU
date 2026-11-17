@@ -2,6 +2,12 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.model.SuSFSConfig
+import com.hzzmonnet.aweyuki.domain.model.SuSFSSlotInfo
+import com.hzzmonnet.aweyuki.domain.model.SuSFSStatusInfo
+import com.hzzmonnet.aweyuki.domain.model.SusKstatStatically
+import com.hzzmonnet.aweyuki.domain.model.UidScheme
+import com.hzzmonnet.aweyuki.domain.usecase.SuSFSConfigUseCase
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -10,12 +16,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.domain.model.SuSFSConfig
-import com.hzzmonnet.aweyuki.domain.model.SuSFSSlotInfo
-import com.hzzmonnet.aweyuki.domain.model.SuSFSStatusInfo
-import com.hzzmonnet.aweyuki.domain.model.SusKstatStatically
-import com.hzzmonnet.aweyuki.domain.model.UidScheme
-import com.hzzmonnet.aweyuki.domain.usecase.SuSFSConfigUseCase
 
 data class SuSFSUiState(
     val config: SuSFSConfig? = null,

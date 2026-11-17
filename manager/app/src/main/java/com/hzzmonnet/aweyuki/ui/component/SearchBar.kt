@@ -91,10 +91,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.currentStateAsState
-import kotlin.math.roundToInt
-import kotlin.time.Duration.Companion.milliseconds
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.ui.component.settings.AppBackButton
 import com.hzzmonnet.aweyuki.ui.theme.CardConfig
 import com.hzzmonnet.aweyuki.ui.theme.ThemeConfig
@@ -102,6 +98,10 @@ import com.hzzmonnet.aweyuki.ui.theme.blurEffect
 import com.hzzmonnet.aweyuki.ui.theme.renderBackgroundBlur
 import com.hzzmonnet.aweyuki.ui.util.LocalPagerPage
 import com.hzzmonnet.aweyuki.ui.util.LocalSelectedPage
+import kotlin.math.roundToInt
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 
 private val SearchBarInitialHeight = 77.dp

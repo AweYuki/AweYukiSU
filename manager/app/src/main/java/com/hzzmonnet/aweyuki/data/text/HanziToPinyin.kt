@@ -18,9 +18,9 @@ package com.hzzmonnet.aweyuki.data.text
 
 import android.text.TextUtils
 import android.util.Log
+import com.hzzmonnet.aweyuki.domain.text.TextTransliterator
 import java.text.Collator
 import java.util.Locale
-import com.hzzmonnet.aweyuki.domain.text.TextTransliterator
 
 class HanziToPinyin private constructor(val hasChinaCollator: Boolean) : TextTransliterator {
 

@@ -6,10 +6,6 @@ import android.net.Uri
 import android.os.Build
 import android.widget.Toast
 import androidx.core.net.toUri
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.DownloadState
 import com.hzzmonnet.aweyuki.domain.model.DownloadStatus
@@ -19,6 +15,10 @@ import com.hzzmonnet.aweyuki.domain.usecase.EnqueueDownloadUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.EnqueueManagerUpdateUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.ObserveDownloadUseCase
 import com.hzzmonnet.aweyuki.ui.activity.PermissionRequestInterface
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
 
 /**
  * @author weishu

@@ -1,5 +1,12 @@
 package com.hzzmonnet.aweyuki.data.module
 
+import com.hzzmonnet.aweyuki.data.network.NetworkRequestRepository
+import com.hzzmonnet.aweyuki.data.network.NetworkStatusRepository
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.InstalledModule
+import com.hzzmonnet.aweyuki.domain.model.InstalledModulesState
+import com.hzzmonnet.aweyuki.domain.model.MetaModuleStatus
+import com.hzzmonnet.aweyuki.domain.model.ModuleUpdateMetadata
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -12,13 +19,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.network.NetworkRequestRepository
-import com.hzzmonnet.aweyuki.data.network.NetworkStatusRepository
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.InstalledModule
-import com.hzzmonnet.aweyuki.domain.model.InstalledModulesState
-import com.hzzmonnet.aweyuki.domain.model.MetaModuleStatus
-import com.hzzmonnet.aweyuki.domain.model.ModuleUpdateMetadata
 import org.json.JSONArray
 import org.json.JSONObject
 

@@ -1,7 +1,5 @@
 package com.hzzmonnet.aweyuki.domain.usecase
 
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.flow.firstOrNull
 import com.hzzmonnet.aweyuki.data.module.ModuleCatalogRepository
 import com.hzzmonnet.aweyuki.data.module.ModuleIconRepository
 import com.hzzmonnet.aweyuki.data.module.ModuleReleaseRepository
@@ -15,6 +13,8 @@ import com.hzzmonnet.aweyuki.domain.model.ModuleReadme
 import com.hzzmonnet.aweyuki.domain.model.ModuleRelease
 import com.hzzmonnet.aweyuki.domain.model.ModuleUpdateVerification
 import com.hzzmonnet.aweyuki.domain.model.RepositoryApiType
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.flow.firstOrNull
 
 class ObserveCatalogModulesUseCase(private val repository: ModuleCatalogRepository) {
     operator fun invoke() = repository.modules

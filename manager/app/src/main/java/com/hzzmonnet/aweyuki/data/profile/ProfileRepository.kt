@@ -1,16 +1,16 @@
 package com.hzzmonnet.aweyuki.data.profile
 
+import com.hzzmonnet.aweyuki.Natives
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.AllowlistRestoreResult
+import com.hzzmonnet.aweyuki.domain.model.AppControlAction
+import com.hzzmonnet.aweyuki.domain.model.AppProfile
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.Natives
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.AllowlistRestoreResult
-import com.hzzmonnet.aweyuki.domain.model.AppControlAction
-import com.hzzmonnet.aweyuki.domain.model.AppProfile
 
 data class AppProfileKey(
     val packageName: String,

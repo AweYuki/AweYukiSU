@@ -3,13 +3,6 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.stateIn
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.domain.model.RepositoryApiType
 import com.hzzmonnet.aweyuki.domain.model.RepositoryFailure
 import com.hzzmonnet.aweyuki.domain.model.RepositorySource
@@ -17,6 +10,13 @@ import com.hzzmonnet.aweyuki.domain.usecase.AddModuleRepositoryUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.ObserveRepositorySourcesUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.RemoveModuleRepositoryUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.RenameModuleRepositoryUseCase
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 data class RepositorySourcesUiState(
     val sources: List<RepositorySource> = emptyList(),

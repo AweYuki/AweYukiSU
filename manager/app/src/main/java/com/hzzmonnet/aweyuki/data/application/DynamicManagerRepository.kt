@@ -1,5 +1,11 @@
 package com.hzzmonnet.aweyuki.data.application
 
+import com.hzzmonnet.aweyuki.data.kernel.KernelRepository
+import com.hzzmonnet.aweyuki.data.packageinfo.InstalledPackageRepository
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.DynamicManagerApp
+import com.hzzmonnet.aweyuki.domain.model.DynamicManagerConfig
+import com.hzzmonnet.aweyuki.domain.model.DynamicManagerState
 import java.io.File
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -9,12 +15,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.kernel.KernelRepository
-import com.hzzmonnet.aweyuki.data.packageinfo.InstalledPackageRepository
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.DynamicManagerApp
-import com.hzzmonnet.aweyuki.domain.model.DynamicManagerConfig
-import com.hzzmonnet.aweyuki.domain.model.DynamicManagerState
 
 class DynamicManagerRepository(
     private val kernelRepository: KernelRepository,

@@ -1,8 +1,6 @@
 package com.hzzmonnet.aweyuki.data.kernel
 
 import android.app.Application
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.Natives
 import com.hzzmonnet.aweyuki.Natives.KernelPatchImplementation
 import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
@@ -12,6 +10,8 @@ import com.hzzmonnet.aweyuki.domain.model.KernelStatus
 import com.hzzmonnet.aweyuki.domain.model.ManagerRecord
 import com.hzzmonnet.aweyuki.domain.model.ManagerRuntimeInfo
 import com.hzzmonnet.aweyuki.getKernelVersion
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class KernelRepository(
     private val application: Application,

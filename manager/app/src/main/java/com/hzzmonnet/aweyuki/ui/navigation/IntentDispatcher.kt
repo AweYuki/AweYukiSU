@@ -15,7 +15,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
 import androidx.core.net.toUri
-import kotlinx.coroutines.channels.ReceiveChannel
 import com.hzzmonnet.aweyuki.Natives
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.data.download.DownloadService
@@ -26,6 +25,7 @@ import com.hzzmonnet.aweyuki.ui.component.ZipFileDetector
 import com.hzzmonnet.aweyuki.ui.component.ZipFileInfo
 import com.hzzmonnet.aweyuki.ui.component.ZipType
 import com.hzzmonnet.aweyuki.ui.webui.WebUIActivity
+import kotlinx.coroutines.channels.ReceiveChannel
 import org.koin.compose.koinInject
 
 private const val SCHEME_KSU = "ksu"

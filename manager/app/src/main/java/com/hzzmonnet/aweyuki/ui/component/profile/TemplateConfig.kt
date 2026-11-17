@@ -22,7 +22,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.AppProfile
 import com.hzzmonnet.aweyuki.ui.component.NetworkRefreshContent
@@ -30,6 +29,7 @@ import com.hzzmonnet.aweyuki.ui.component.settings.SettingsChooseWidget
 import com.hzzmonnet.aweyuki.ui.util.ActivityResumeEffect
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.TemplateViewModel
+import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 /**

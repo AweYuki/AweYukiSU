@@ -1,11 +1,11 @@
 package com.hzzmonnet.aweyuki.domain.model
 
 import androidx.annotation.StringRes
+import com.hzzmonnet.aweyuki.R
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Locale
-import com.hzzmonnet.aweyuki.R
 
 data class SulogFile(
     val name: String,

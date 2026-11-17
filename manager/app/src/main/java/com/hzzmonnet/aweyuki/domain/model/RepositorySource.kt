@@ -1,8 +1,8 @@
 package com.hzzmonnet.aweyuki.domain.model
 
 import androidx.annotation.StringRes
-import java.io.IOException
 import com.hzzmonnet.aweyuki.R
+import java.io.IOException
 
 enum class RepositoryApiType(@param:StringRes val resId: Int) {
     KERNEL_SU(R.string.repo_api_kernel_su),

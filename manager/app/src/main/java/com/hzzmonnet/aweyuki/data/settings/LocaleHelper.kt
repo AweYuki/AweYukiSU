@@ -8,8 +8,8 @@ import android.content.res.Configuration
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
-import java.util.Locale
 import com.hzzmonnet.aweyuki.data.AppSettingsRepository
+import java.util.Locale
 
 /**
  * Launch system app locale settings (Android 13+)

@@ -6,13 +6,13 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonParser
-import kotlinx.coroutines.CancellationException
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.data.AppSettingsRepository
 import com.hzzmonnet.aweyuki.domain.model.RepositoryApiType
 import com.hzzmonnet.aweyuki.domain.model.RepositoryError
 import com.hzzmonnet.aweyuki.domain.model.RepositoryException
 import com.hzzmonnet.aweyuki.domain.model.RepositorySource
+import kotlinx.coroutines.CancellationException
 
 class RepositorySourceStore(
     private val settings: AppSettingsRepository,

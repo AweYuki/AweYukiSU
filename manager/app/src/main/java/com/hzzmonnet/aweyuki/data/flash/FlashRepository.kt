@@ -3,6 +3,14 @@ package com.hzzmonnet.aweyuki.data.flash
 import android.app.Application
 import android.net.Uri
 import androidx.core.net.toUri
+import com.hzzmonnet.aweyuki.data.file.ModuleFileRepository
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.FlashOperation
+import com.hzzmonnet.aweyuki.domain.model.FlashOperationUpdate
+import com.hzzmonnet.aweyuki.domain.model.FlashProgress
+import com.hzzmonnet.aweyuki.domain.model.InstallEnvironment
+import com.hzzmonnet.aweyuki.domain.model.KernelFlashSession
+import com.hzzmonnet.aweyuki.getKernelVersion
 import com.topjohnwu.superuser.io.SuFile
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,14 +27,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
-import com.hzzmonnet.aweyuki.data.file.ModuleFileRepository
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.FlashOperation
-import com.hzzmonnet.aweyuki.domain.model.FlashOperationUpdate
-import com.hzzmonnet.aweyuki.domain.model.FlashProgress
-import com.hzzmonnet.aweyuki.domain.model.InstallEnvironment
-import com.hzzmonnet.aweyuki.domain.model.KernelFlashSession
-import com.hzzmonnet.aweyuki.getKernelVersion
 
 class FlashRepository(
     private val application: Application,

@@ -1,11 +1,11 @@
 package com.hzzmonnet.aweyuki.data.module
 
+import com.hzzmonnet.aweyuki.data.AppSettingsRepository
+import com.hzzmonnet.aweyuki.domain.model.ModulePreferences
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
-import com.hzzmonnet.aweyuki.data.AppSettingsRepository
-import com.hzzmonnet.aweyuki.domain.model.ModulePreferences
 
 class ModulePreferencesRepository(
     private val settings: AppSettingsRepository,

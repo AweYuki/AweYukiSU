@@ -2,13 +2,13 @@ package com.hzzmonnet.aweyuki.data.update
 
 import android.os.Build
 import android.util.Log
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.BuildConfig
 import com.hzzmonnet.aweyuki.data.network.NetworkRequestRepository
 import com.hzzmonnet.aweyuki.domain.model.ManagerApkSource
 import com.hzzmonnet.aweyuki.domain.model.ManagerUpdateChannel
 import com.hzzmonnet.aweyuki.domain.model.ManagerUpdateInfo
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import org.json.JSONObject
 
 class ManagerUpdateRepository(

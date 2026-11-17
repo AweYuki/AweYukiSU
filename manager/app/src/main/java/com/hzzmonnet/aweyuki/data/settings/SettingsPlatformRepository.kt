@@ -6,11 +6,6 @@ import android.content.pm.PackageManager
 import android.content.res.Configuration
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import com.topjohnwu.superuser.ShellUtils
-import java.security.SecureRandom
-import kotlinx.coroutines.CancellationException
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.Natives
 import com.hzzmonnet.aweyuki.data.AppSettingsRepository
 import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
@@ -23,6 +18,11 @@ import com.hzzmonnet.aweyuki.magica.BootCompletedReceiver
 import com.hzzmonnet.aweyuki.ui.theme.BackgroundManager
 import com.hzzmonnet.aweyuki.ui.theme.CardConfig
 import com.hzzmonnet.aweyuki.ui.theme.ThemeConfig
+import com.topjohnwu.superuser.ShellUtils
+import java.security.SecureRandom
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class SettingsPlatformRepository(
     private val application: Application,

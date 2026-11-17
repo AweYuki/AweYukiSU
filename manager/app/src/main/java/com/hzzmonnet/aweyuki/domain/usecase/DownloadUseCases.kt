@@ -1,13 +1,13 @@
 package com.hzzmonnet.aweyuki.domain.usecase
 
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
 import com.hzzmonnet.aweyuki.data.download.DownloadRepository
 import com.hzzmonnet.aweyuki.domain.model.DownloadState
 import com.hzzmonnet.aweyuki.domain.model.ExpectedFile
 import com.hzzmonnet.aweyuki.domain.model.ManagerUpdateInfo
 import com.hzzmonnet.aweyuki.domain.model.ModuleReleaseAsset
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
 
 class EnqueueDownloadUseCase(private val repository: DownloadRepository) {
     operator fun invoke(url: String, fileName: String, expected: ExpectedFile? = null): Int = repository.enqueue(url, fileName, expected)

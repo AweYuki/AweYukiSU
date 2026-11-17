@@ -23,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.SusKstatItem
 import com.hzzmonnet.aweyuki.domain.model.SusKstatStatically
@@ -45,6 +44,7 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.SuSFSViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.SusKstatOperation
 import com.hzzmonnet.aweyuki.ui.viewmodel.awaitSuSFSBoolean
 import com.hzzmonnet.aweyuki.ui.viewmodel.awaitSuSFSConfig
+import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)

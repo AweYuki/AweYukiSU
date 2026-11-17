@@ -9,9 +9,9 @@ import android.webkit.JavascriptInterface
 import android.widget.Toast
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import java.io.File
 import com.hzzmonnet.aweyuki.data.packageinfo.InstalledPackageRepository
 import com.hzzmonnet.aweyuki.data.webui.WebUiRepository
+import java.io.File
 import org.json.JSONArray
 import org.json.JSONObject
 

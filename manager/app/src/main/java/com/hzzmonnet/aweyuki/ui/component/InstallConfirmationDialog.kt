@@ -45,10 +45,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import java.io.InputStream
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.data.file.withInstallArchive
 import com.hzzmonnet.aweyuki.domain.model.CatalogModule
@@ -63,6 +59,10 @@ import com.hzzmonnet.aweyuki.domain.usecase.ObserveDownloadUseCase
 import com.hzzmonnet.aweyuki.ui.util.LocalPermissionRequestInterface
 import com.hzzmonnet.aweyuki.ui.util.downloader.download
 import com.hzzmonnet.aweyuki.ui.util.downloader.downloadFailureMessage
+import java.io.InputStream
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.koin.compose.koinInject
 
 val LocalRepositoryModuleInstall = staticCompositionLocalOf<(Uri, CatalogModule, ModuleReleaseAsset, () -> Boolean) -> Unit> {

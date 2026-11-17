@@ -2,6 +2,12 @@ package com.hzzmonnet.aweyuki.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.hzzmonnet.aweyuki.domain.model.ProfileTemplate
+import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateException
+import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateFailure
+import com.hzzmonnet.aweyuki.domain.usecase.DeleteProfileTemplateUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.GetProfileTemplateUseCase
+import com.hzzmonnet.aweyuki.domain.usecase.SaveProfileTemplateUseCase
 import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -15,12 +21,6 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
-import com.hzzmonnet.aweyuki.domain.model.ProfileTemplate
-import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateException
-import com.hzzmonnet.aweyuki.domain.model.ProfileTemplateFailure
-import com.hzzmonnet.aweyuki.domain.usecase.DeleteProfileTemplateUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.GetProfileTemplateUseCase
-import com.hzzmonnet.aweyuki.domain.usecase.SaveProfileTemplateUseCase
 
 data class TemplateEditorUiState(
     val template: ProfileTemplate = ProfileTemplate(),

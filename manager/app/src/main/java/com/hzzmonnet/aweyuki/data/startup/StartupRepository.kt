@@ -1,9 +1,9 @@
 package com.hzzmonnet.aweyuki.data.startup
 
+import com.hzzmonnet.aweyuki.domain.model.StartupState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import com.hzzmonnet.aweyuki.domain.model.StartupState
 
 class StartupRepository {
     private val mutableState = MutableStateFlow<StartupState>(StartupState.Loading)

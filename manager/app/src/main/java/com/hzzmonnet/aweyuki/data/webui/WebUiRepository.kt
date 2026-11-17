@@ -1,15 +1,15 @@
 package com.hzzmonnet.aweyuki.data.webui
 
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonnet.aweyuki.domain.model.WebUiCommandResult
+import com.hzzmonnet.aweyuki.domain.model.WebUiModuleInfo
+import com.hzzmonnet.aweyuki.domain.model.WebUiProcess
 import com.topjohnwu.superuser.CallbackList
 import com.topjohnwu.superuser.Shell
 import com.topjohnwu.superuser.internal.UiThreadHandler
 import com.topjohnwu.superuser.io.SuFile
 import com.topjohnwu.superuser.io.SuFileInputStream
 import java.util.concurrent.CompletableFuture
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
-import com.hzzmonnet.aweyuki.domain.model.WebUiCommandResult
-import com.hzzmonnet.aweyuki.domain.model.WebUiModuleInfo
-import com.hzzmonnet.aweyuki.domain.model.WebUiProcess
 
 class WebUiRepository(
     private val ksuCliRepository: KsuCliRepository,

@@ -16,9 +16,6 @@ import androidx.compose.material3.Text
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.domain.model.StartupState
 import com.hzzmonnet.aweyuki.domain.usecase.ApplyLanguageUseCase
 import com.hzzmonnet.aweyuki.domain.usecase.EnsureManagerInstalledUseCase
@@ -32,6 +29,9 @@ import com.hzzmonnet.aweyuki.ui.viewmodel.ModuleViewModel
 import com.hzzmonnet.aweyuki.ui.viewmodel.SettingsUiAction
 import com.hzzmonnet.aweyuki.ui.viewmodel.SettingsUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.SettingsViewModel
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

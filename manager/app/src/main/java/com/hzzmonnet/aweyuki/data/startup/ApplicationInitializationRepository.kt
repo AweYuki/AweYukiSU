@@ -5,12 +5,12 @@ import android.app.Application
 import android.system.Os
 import coil.Coil
 import coil.ImageLoader
+import com.hzzmonnet.aweyuki.data.flash.FlashRepository
+import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 import com.topjohnwu.superuser.internal.MainShell
 import java.io.File
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import com.hzzmonnet.aweyuki.data.flash.FlashRepository
-import com.hzzmonnet.aweyuki.data.shell.KsuCliRepository
 
 class ApplicationInitializationRepository(
     private val application: Application,

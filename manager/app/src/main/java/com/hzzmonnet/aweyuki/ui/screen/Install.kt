@@ -64,8 +64,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.launch
 import com.hzzmonnet.aweyuki.R
 import com.hzzmonnet.aweyuki.domain.model.LkmSelection
 import com.hzzmonnet.aweyuki.ui.component.DialogHandle
@@ -87,6 +85,8 @@ import com.hzzmonnet.aweyuki.ui.util.LocalBlurState
 import com.hzzmonnet.aweyuki.ui.util.adaptiveScaffoldWindowInsets
 import com.hzzmonnet.aweyuki.ui.viewmodel.InstallUiEvent
 import com.hzzmonnet.aweyuki.ui.viewmodel.InstallViewModel
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
 
