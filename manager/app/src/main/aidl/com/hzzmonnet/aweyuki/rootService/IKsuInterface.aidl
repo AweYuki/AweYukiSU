@@ -1,5 +1,5 @@
 // IKsuInterface.aidl
-package org.aweyukisu.rootService;
+package com.hzzmonnet.aweyuki.rootService;
 
 import android.content.pm.PackageInfo;
 import java.util.List;

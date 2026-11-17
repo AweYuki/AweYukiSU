@@ -69,6 +69,7 @@ Với từng file conflict:
 3. **Thay thế định danh từ upstream**:
    - Mọi code mới lấy từ upstream có chứa `org.bakasu.bakasu` → đổi thành `com.hzzmonnet.aweyuki`.
    - Mọi chuỗi/macro `BakaSU` / `bakasu` / `BAKASU` → đổi thành `AweYukiSU` / `aweyukisu` / `AWEYUKISU`.
+   - **Ngoại lệ**: Giữ nguyên URL dependency bên ngoài như `https://github.com/Baka-SU/android_bootimg` trong `userspace/ksud/Cargo.toml` và `Cargo.lock` (không đổi thành `AweYukiSU`, nếu không `Clippy check` trên CI sẽ lỗi clone).
 4. **Multi-manager**:
    - Nếu upstream thêm code liên quan `CONFIG_KSU_MULTI_MANAGER_SUPPORT` trong `kernel/Kconfig`, `kernel/Kbuild`, `kernel/build-all.sh`, `kernel/tools/ddk_compatible.mk`, `kernel/manager/apk_sign.c` → bỏ qua hoặc loại bỏ phần multi-manager đó để giữ đúng cấu hình của AweYukiSU.
 
@@ -86,7 +87,12 @@ git add <file-đã-xử-lý>
    ```bash
    rg -n "org\.bakasu\.bakasu|CONFIG_KSU_MULTI_MANAGER_SUPPORT"
    ```
-3. Hoàn tất merge commit:
+3. Format lại Kotlin imports (tránh lỗi `Check Manager Format` / Spotless trên CI sau khi đổi `org.bakasu.bakasu` → `com.hzzmonnet.aweyuki`):
+   ```bash
+   cd manager && ./gradlew spotlessApply
+   ```
+   *(Nếu máy local không có JDK, hãy sắp xếp lại các dòng `import` theo thứ tự bảng chữ cái trong các file `.kt`/`.kts` đã sửa.)*
+4. Hoàn tất merge commit:
    ```bash
    git commit -m "chore: sync upstream BakaSU"
    ```

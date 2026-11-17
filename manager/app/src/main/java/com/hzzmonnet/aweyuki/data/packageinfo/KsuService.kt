@@ -8,7 +8,7 @@ import android.os.UserHandle
 import android.os.UserManager
 import android.util.Log
 import com.topjohnwu.superuser.ipc.RootService
-import org.aweyukisu.rootService.IKsuInterface
+import com.hzzmonnet.aweyuki.rootService.IKsuInterface
 
 /**
  * @author ShirkNeko

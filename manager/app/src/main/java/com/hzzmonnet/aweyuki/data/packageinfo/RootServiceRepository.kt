@@ -24,7 +24,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
-import org.aweyukisu.rootService.IKsuInterface
+import com.hzzmonnet.aweyuki.rootService.IKsuInterface
 
 class RootServiceException(val reason: SuperUserLoadFailure, cause: Throwable? = null) : IOException(reason.name, cause)
 
