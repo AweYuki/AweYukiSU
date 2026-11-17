@@ -1,5 +1,5 @@
-# BakaSU
-<img align='right' src='BakaSU_Full.svg' width='220px' alt="BakaSU Icon">
+# AweYukiSU
+<img align='right' src='AweYukiSU_Full.svg' width='220px' alt="AweYukiSU Icon">
 
 Formerly known as: ReSukiSU
 
@@ -7,11 +7,11 @@ Formerly known as: ReSukiSU
 
 A [`tiann/KernelSU`](https://github.com/tiann/KernelSU)'s downstream, added some personal changes.
 
-[![Latest release](https://img.shields.io/github/v/release/Baka-SU/BakaSU?label=Release&logo=github)](https://github.com/Baka-SU/BakaSU/releases/latest)
-[![Latest CI build (nightly.link)](https://img.shields.io/badge/nightly.link-Latest%20CI%20Build-800080)](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main)
-[![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/BakaSU_Grp)
+[![Latest release](https://img.shields.io/github/v/release/AweYukiSU/AweYukiSU?label=Release&logo=github)](https://github.com/AweYukiSU/AweYukiSU/releases/latest)
+[![Latest CI build (nightly.link)](https://img.shields.io/badge/nightly.link-Latest%20CI%20Build-800080)](https://nightly.link/AweYukiSU/AweYukiSU/workflows/build-manager/main)
+[![Channel](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/AweYukiSU_Grp)
 [![Kernel License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![Other part License：GPL v3](https://img.shields.io/github/license/Baka-SU/BakaSU?logo=gnu)](../LICENSE)
+[![Other part License：GPL v3](https://img.shields.io/github/license/AweYukiSU/AweYukiSU?logo=gnu)](../LICENSE)
 
 ## Features
 
@@ -20,11 +20,11 @@ A [`tiann/KernelSU`](https://github.com/tiann/KernelSU)'s downstream, added some
 3. [App Profile](https://kernelsu.org/guide/app-profile.html): Lock up the root power in a cage
 4. Support non-GKI and GKI 1.0
 5. Tweaks to the manager theme and the built-in susfs management tool.
-6. Multi manager support, for default [Official KernelSU](https://github.com/tiann/KernelSU)/[KOWSU](https://github.com/KOWX712/KernelSU) is supported work as manager with BakaSU's kernel
+6. Multi manager support, for default [Official KernelSU](https://github.com/tiann/KernelSU)/[KOWSU](https://github.com/KOWX712/KernelSU) is supported work as manager with AweYukiSU's kernel
 
 ## Compatibility Status
 
-- BakaSU officially supports Android GKI 2.0 devices (kernel 5.10+).
+- AweYukiSU officially supports Android GKI 2.0 devices (kernel 5.10+).
 
 - Older kernels (3.4+) are also compatible, but the kernel will have to be built manually.
 
@@ -41,11 +41,11 @@ A [`tiann/KernelSU`](https://github.com/tiann/KernelSU)'s downstream, added some
 
 ## Integration
 
-See the [documentation](https://bakasu.org).
+See the [documentation](https://aweyukisu.org).
 
 ## Translation
 
-If you want to submit a translation for the manager, please go to [Weblate](https://hosted.weblate.org/engage/bakasu/).
+If you want to submit a translation for the manager, please go to [Weblate](https://hosted.weblate.org/engage/aweyukisu/).
 
 ## Sponsor
 
@@ -54,16 +54,16 @@ If you want to submit a translation for the manager, please go to [Weblate](http
 ## License
 
 - The file in the “kernel” directory is under [GPL-2.0-only](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html) license.
-- The artwork and visual files ([`docs/BakaSU_Clean.svg`](./BakaSU_Clean.svg), [`docs/BakaSU_Full.svg`](./BakaSU_Full.svg), and [`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`](../manager/app/src/main/res/drawable/ic_launcher_foreground.xml)) are created by [OukaroMF](https://github.com/OukaroMF) under a layered license arrangement. See [`ASSETS_LICENSE.md`](../ASSETS_LICENSE.md) and [`ASSETS_LICENSE.zh-CN.md`](../ASSETS_LICENSE.zh-CN.md) for details.
+- The artwork and visual files ([`docs/AweYukiSU_Clean.svg`](./AweYukiSU_Clean.svg), [`docs/AweYukiSU_Full.svg`](./AweYukiSU_Full.svg), and [`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`](../manager/app/src/main/res/drawable/ic_launcher_foreground.xml)) are created by [OukaroMF](https://github.com/OukaroMF) under a layered license arrangement. See [`ASSETS_LICENSE.md`](../ASSETS_LICENSE.md) and [`ASSETS_LICENSE.zh-CN.md`](../ASSETS_LICENSE.zh-CN.md) for details.
 - Except for the files or directories mentioned above, all other parts are under [GPL-3.0 or later](https://www.gnu.org/licenses/gpl-3.0.html) license.
 
 ## Localization
 
-Help translate BakaSU on Weblate:
+Help translate AweYukiSU on Weblate:
 
-https://hosted.weblate.org/engage/bakasu/
+https://hosted.weblate.org/engage/aweyukisu/
 
-[![Localization Status](https://hosted.weblate.org/widget/bakasu/multi-auto.svg)](https://hosted.weblate.org/engage/bakasu/)
+[![Localization Status](https://hosted.weblate.org/widget/aweyukisu/multi-auto.svg)](https://hosted.weblate.org/engage/aweyukisu/)
 
 ## Credit
 

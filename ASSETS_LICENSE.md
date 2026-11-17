@@ -1,11 +1,11 @@
-# BakaSU Specific Assets Licensing Terms
+# AweYukiSU Specific Assets Licensing Terms
 
 **English** | [简体中文](ASSETS_LICENSE.zh-CN.md)
 
 > **Author & Copyright Holder**: **OukaroMF** ([GitHub @OukaroMF](https://github.com/OukaroMF))  
 > **Strict Scope**: **This agreement applies STRICTLY and EXCLUSIVELY to the following three designated visual and vector asset files**, and does not apply to any other files, source code, documentation, or assets in this project:
-> 1. **`docs/BakaSU_Clean.svg`**
-> 2. **`docs/BakaSU_Full.svg`**
+> 1. **`docs/AweYukiSU_Clean.svg`**
+> 2. **`docs/AweYukiSU_Full.svg`**
 > 3. **`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`**
 
 ---
@@ -16,16 +16,16 @@ To balance the protection of original creative work, compliance with commercial 
 
 | File | Nature | Author / Copyright Holder | License | Key Permissions & Restrictions |
 | :--- | :--- | :--- | :--- | :--- |
-| **`docs/BakaSU_Clean.svg`** | 100% Original Vector Artwork | **OukaroMF** | **All Rights Reserved** | • **Exclusive Rights**: The author OukaroMF reserves 100% copyright.<br>• **Prohibited**: Unauthorized modification, redistribution, element extraction, or commercial use is strictly prohibited. |
+| **`docs/AweYukiSU_Clean.svg`** | 100% Original Vector Artwork | **OukaroMF** | **All Rights Reserved** | • **Exclusive Rights**: The author OukaroMF reserves 100% copyright.<br>• **Prohibited**: Unauthorized modification, redistribution, element extraction, or commercial use is strictly prohibited. |
 | **`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`** | 100% Original Vector Graphic | **OukaroMF** | **All Rights Reserved** | • **Exclusive Rights**: The author OukaroMF reserves 100% copyright.<br>• **Prohibited**: Unauthorized modification, redistribution, element extraction, or commercial use is strictly prohibited. |
-| **`docs/BakaSU_Full.svg`** | Composite Artwork with 3rd-Party Typography | **OukaroMF**<br>*(contains 3rd-party glyphs)* | **CC BY-NC-ND 4.0** | • **Permitted**: Non-commercial display, sharing, and quotation in unmodified form.<br>• **Restrictions**: Must retain full attribution to GitHub@OukaroMF; commercial use and derivative works/alterations are prohibited. |
+| **`docs/AweYukiSU_Full.svg`** | Composite Artwork with 3rd-Party Typography | **OukaroMF**<br>*(contains 3rd-party glyphs)* | **CC BY-NC-ND 4.0** | • **Permitted**: Non-commercial display, sharing, and quotation in unmodified form.<br>• **Restrictions**: Must retain full attribution to GitHub@OukaroMF; commercial use and derivative works/alterations are prohibited. |
 
 ---
 
 ## 2. Detailed License Terms
 
-### Layer 1: Terms for `docs/BakaSU_Clean.svg` and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml` (All Rights Reserved)
-- **Applicable Subjects**: **Exclusively `docs/BakaSU_Clean.svg` and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml`**.
+### Layer 1: Terms for `docs/AweYukiSU_Clean.svg` and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml` (All Rights Reserved)
+- **Applicable Subjects**: **Exclusively `docs/AweYukiSU_Clean.svg` and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml`**.
 - **Author**: OukaroMF ([GitHub @OukaroMF](https://github.com/OukaroMF))
 - **Copyright Notice**: `Copyright (c) 2026 OukaroMF. All Rights Reserved.`
 - **Terms**:
@@ -38,8 +38,8 @@ To balance the protection of original creative work, compliance with commercial 
 
 ---
 
-### Layer 2: Terms for `docs/BakaSU_Full.svg` (CC BY-NC-ND 4.0)
-- **Applicable Subject**: **Exclusively `docs/BakaSU_Full.svg` itself**.
+### Layer 2: Terms for `docs/AweYukiSU_Full.svg` (CC BY-NC-ND 4.0)
+- **Applicable Subject**: **Exclusively `docs/AweYukiSU_Full.svg` itself**.
 - **Author**: OukaroMF ([GitHub @OukaroMF](https://github.com/OukaroMF))
 - **Applicable License**: [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 - **Terms**:
@@ -54,13 +54,13 @@ To balance the protection of original creative work, compliance with commercial 
 ---
 
 ### Layer 3: Third-Party Typography Credit
-The typography in `docs/BakaSU_Full.svg` incorporates the following third-party commercial font:
+The typography in `docs/AweYukiSU_Full.svg` incorporates the following third-party commercial font:
 
 * **Font Name**: FOT Yuruka Std (フォントワークス ユルカ Std)
 * **Copyright Holder**: Fontworks Inc. (フォントワークス株式会社)
 * **Official Reference**: [https://lets.fontworks.co.jp/fonts/218](https://lets.fontworks.co.jp/fonts/218)
 * **Compliance Notice**:
-  - `docs/BakaSU_Full.svg` only renders text as static outlined vector paths for non-commercial open-source project presentation.
+  - `docs/AweYukiSU_Full.svg` only renders text as static outlined vector paths for non-commercial open-source project presentation.
   - This repository **does NOT supply, distribute, or bundle** any font software files (such as `.ttf`, `.otf`, `.woff`, etc.).
   - All intellectual property rights in the font belong exclusively to Fontworks Inc.
 
@@ -70,14 +70,14 @@ The typography in `docs/BakaSU_Full.svg` incorporates the following third-party 
 
 | Scenario | Permitted? | Note |
 | :--- | :---: | :--- |
-| Embedding/displaying `docs/BakaSU_Full.svg` in reviews, articles, or forum posts | **YES** | Must remain unmodified and include attribution to GitHub@OukaroMF and the project repo |
-| Extracting or modifying `docs/BakaSU_Clean.svg` or `manager/app/src/main/res/drawable/ic_launcher_foreground.xml` for other modules or apps | **NO** | Infringes the copyright of original author OukaroMF |
-| Extracting font vector paths from `docs/BakaSU_Full.svg` to create other words | **NO** | Violates CC BY-NC-ND and commercial font compliance requirements |
+| Embedding/displaying `docs/AweYukiSU_Full.svg` in reviews, articles, or forum posts | **YES** | Must remain unmodified and include attribution to GitHub@OukaroMF and the project repo |
+| Extracting or modifying `docs/AweYukiSU_Clean.svg` or `manager/app/src/main/res/drawable/ic_launcher_foreground.xml` for other modules or apps | **NO** | Infringes the copyright of original author OukaroMF |
+| Extracting font vector paths from `docs/AweYukiSU_Full.svg` to create other words | **NO** | Violates CC BY-NC-ND and commercial font compliance requirements |
 | Using designated visual/artwork assets in paid ROMs, commercial modules, or paid packages | **NO** | Strictly prohibited |
 
 ---
 
 ## 4. Relationship with Source Code License
 
-This license **applies strictly and exclusively to `docs/BakaSU_Clean.svg`, `docs/BakaSU_Full.svg`, and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml`**.  
-The source code of the BakaSU project is licensed under its own open-source license (such as GPL-3.0). The source code license and this asset license are mutually independent and do not cover each other.
+This license **applies strictly and exclusively to `docs/AweYukiSU_Clean.svg`, `docs/AweYukiSU_Full.svg`, and `manager/app/src/main/res/drawable/ic_launcher_foreground.xml`**.  
+The source code of the AweYukiSU project is licensed under its own open-source license (such as GPL-3.0). The source code license and this asset license are mutually independent and do not cover each other.

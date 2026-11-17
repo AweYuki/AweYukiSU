@@ -1,5 +1,5 @@
-# BakaSU
-<img align='right' src='../BakaSU_Full.svg' width='220px' alt="BakaSU Icon">
+# AweYukiSU
+<img align='right' src='../AweYukiSU_Full.svg' width='220px' alt="AweYukiSU Icon">
 
 曾用名：ReSukiSU
 
@@ -7,11 +7,11 @@
 
 一个 [`tiann/KernelSU`](https://github.com/tiann/KernelSU) 的下游分支, 添加了一些个人修改。
 
-[![最新发行](https://img.shields.io/github/v/release/Baka-SU/BakaSU?label=Release&logo=github)](https://github.com/Baka-SU/BakaSU/releases/latest)
-[![最新 CI 构建（nightly.link）](https://img.shields.io/badge/nightly.link-%E6%9C%80%E6%96%B0%20CI%20%E6%9E%84%E5%BB%BA-800080)](https://nightly.link/Baka-SU/BakaSU/workflows/build-manager/main)
-[![频道](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/BakaSU_Grp)
+[![最新发行](https://img.shields.io/github/v/release/AweYukiSU/AweYukiSU?label=Release&logo=github)](https://github.com/AweYukiSU/AweYukiSU/releases/latest)
+[![最新 CI 构建（nightly.link）](https://img.shields.io/badge/nightly.link-%E6%9C%80%E6%96%B0%20CI%20%E6%9E%84%E5%BB%BA-800080)](https://nightly.link/AweYukiSU/AweYukiSU/workflows/build-manager/main)
+[![频道](https://img.shields.io/badge/Follow-Telegram-blue.svg?logo=telegram)](https://t.me/AweYukiSU_Grp)
 [![Kernel License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-orange.svg?logo=gnu)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-[![其他部分 License：GPL v3](https://img.shields.io/github/license/Baka-SU/BakaSU?logo=gnu)](../../LICENSE)
+[![其他部分 License：GPL v3](https://img.shields.io/github/license/AweYukiSU/AweYukiSU?logo=gnu)](../../LICENSE)
 
 ## 特性
 
@@ -20,11 +20,11 @@
 3. [App Profile](https://kernelsu.org/zh_CN/guide/app-profile.html): 把 Root 权限关进笼子里。
 4. 支持 non-GKI 与 GKI 1.0。
 5. 可调整管理器外观，可自定义 susfs 配置。
-6. 多管理器支持，默认支持使用 [官方KernelSU](https://github.com/tiann/KernelSU)/[KOWSU](https://github.com/KOWX712/KernelSU) 作为管理器与 BakaSU 内核共同工作
+6. 多管理器支持，默认支持使用 [官方KernelSU](https://github.com/tiann/KernelSU)/[KOWSU](https://github.com/KOWX712/KernelSU) 作为管理器与 AweYukiSU 内核共同工作
 
 ## 兼容状态
 
-- BakaSU 官方支持 GKI 2.0 的设备（内核版本 5.10 以上）。
+- AweYukiSU 官方支持 GKI 2.0 的设备（内核版本 5.10 以上）。
 
 - 旧内核也是兼容的（3.4+），不过需要自己编译内核。
 
@@ -39,16 +39,16 @@
 
 ## 集成
 
-请参考[文档](https://bakasu.org)
+请参考[文档](https://aweyukisu.org)
 
 ## 参与翻译
 
-要将 BakaSU 翻译成您的语言，或完善现有的翻译，请使用 [Weblate](https://hosted.weblate.org/engage/bakasu/).
+要将 AweYukiSU 翻译成您的语言，或完善现有的翻译，请使用 [Weblate](https://hosted.weblate.org/engage/aweyukisu/).
 
 ## 许可证
 
 - 目录 `kernel` 下所有文件为 [GPL-2.0-only](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)。
-- 美术及视觉资源（[`docs/BakaSU_Clean.svg`](../BakaSU_Clean.svg)、[`docs/BakaSU_Full.svg`](../BakaSU_Full.svg) 与 [`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`](../../manager/app/src/main/res/drawable/ic_launcher_foreground.xml)）由 [OukaroMF](https://github.com/OukaroMF) 原创制作并采用分层版权协议，详见 [`ASSETS_LICENSE.md`](../../ASSETS_LICENSE.md) 与 [`ASSETS_LICENSE.zh-CN.md`](../../ASSETS_LICENSE.zh-CN.md)。
+- 美术及视觉资源（[`docs/AweYukiSU_Clean.svg`](../AweYukiSU_Clean.svg)、[`docs/AweYukiSU_Full.svg`](../AweYukiSU_Full.svg) 与 [`manager/app/src/main/res/drawable/ic_launcher_foreground.xml`](../../manager/app/src/main/res/drawable/ic_launcher_foreground.xml)）由 [OukaroMF](https://github.com/OukaroMF) 原创制作并采用分层版权协议，详见 [`ASSETS_LICENSE.md`](../../ASSETS_LICENSE.md) 与 [`ASSETS_LICENSE.zh-CN.md`](../../ASSETS_LICENSE.zh-CN.md)。
 - 除上述文件及目录的其他部分均为 [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)。
 
 ## 致谢
@@ -57,11 +57,11 @@
 
 ## 本地化
 
-在 Weblate 上对 BakaSU 的翻译做出贡献:
+在 Weblate 上对 AweYukiSU 的翻译做出贡献:
 
-https://hosted.weblate.org/engage/bakasu/
+https://hosted.weblate.org/engage/aweyukisu/
 
-[![翻译状态](https://hosted.weblate.org/widget/bakasu/multi-auto.svg)](https://hosted.weblate.org/engage/bakasu/)
+[![翻译状态](https://hosted.weblate.org/widget/aweyukisu/multi-auto.svg)](https://hosted.weblate.org/engage/aweyukisu/)
 
 ## 鸣谢
 

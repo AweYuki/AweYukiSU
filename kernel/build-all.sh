@@ -20,7 +20,6 @@ for kmi in $KMIS; do
     if ddk build "$kmi" \
         -e CONFIG_KSU=m \
         -e CONFIG_KSU_TRACEPOINT_HOOK=y \
-        -e CONFIG_KSU_MULTI_MANAGER_SUPPORT=y \
         -- \
         "ODIR=$ODIR" \
         -C kernel; then
