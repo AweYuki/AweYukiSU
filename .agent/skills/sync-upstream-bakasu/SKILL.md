@@ -5,7 +5,7 @@ description: Hướng dẫn agent sync code từ upstream BakaSU về fork AweYu
 
 # Sync Upstream BakaSU (An toàn, không mất commit local)
 
-Skill này hướng dẫn quy trình đồng bộ (sync) thay đổi mới từ repository gốc (**BakaSU**) về fork **AweYukiSU** (`com.hzzmonnet.aweyuki`) mà vẫn bảo toàn toàn bộ commit và tùy chỉnh riêng của dự án.
+Skill này hướng dẫn quy trình đồng bộ (sync) thay đổi mới từ repository gốc (**BakaSU**) về fork **AweYukiSU** (`com.hzzmonet.aweyuki`) mà vẫn bảo toàn toàn bộ commit và tùy chỉnh riêng của dự án.
 
 ## Nguyên tắc cốt lõi
 
@@ -13,9 +13,9 @@ Skill này hướng dẫn quy trình đồng bộ (sync) thay đổi mới từ 
 2. **Luôn tạo nhánh backup** trước khi merge/rebase để có thể khôi phục tức thì nếu xử lý conflict nhầm.
 3. **Ưu tiên `git merge`** (hoặc `git rebase` trên nhánh phụ) để giữ lịch sử rõ ràng và xử lý conflict từng file một cách có kiểm soát.
 4. **Giữ vững các tùy chỉnh đặc thù của AweYukiSU**:
-   - Tên dự án: `AweYukiSU` (không để lọt `BakaSU` / `bakasu` mới từ upstream).
-   - Package name: `com.hzzmonnet.aweyuki` (thay cho `org.bakasu.bakasu` của upstream).
-   - Không hỗ trợ multi-manager (`CONFIG_KSU_MULTI_MANAGER_SUPPORT` đã bị loại bỏ khỏi `kernel/`).
+   - Tên dự án: `AweYukiSU`, repo GitHub: `AweYuki/AweYukiSU` (không để lọt `BakaSU` / `Baka-SU/BakaSU` mới từ upstream).
+   - Package name & Application ID: `com.hzzmonet.aweyuki` (thay cho cả `org.bakasu.bakasu` lẫn `com.resukisu.resukisu` của upstream, bao gồm cả JNI symbols `Java_com_hzzmonet_aweyuki_*` trong `manager/app/src/main/cpp/`).
+   - Không hỗ trợ multi-manager (`CONFIG_KSU_MULTI_MANAGER_SUPPORT` đã bị loại bỏ khỏi `kernel/` và `.github/workflows/`), nhưng giữ lại `#ifdef EXPECTED_SIZE` và `#ifdef EXPECTED_PR_BUILD_SIZE` trong `kernel/manager/apk_sign.c`.
 
 ---
 
@@ -64,14 +64,14 @@ git diff --name-only --diff-filter=U
 Với từng file conflict:
 1. **Đọc kỹ cả hai phía** (`<<<<<<< HEAD` là code của AweYukiSU, `>>>>>>> upstream/main` là code mới từ BakaSU).
 2. **File đã đổi tên/di chuyển package**:
-   - Upstream sửa trong `org/bakasu/bakasu/...`, trong khi repo này nằm ở `com/hzzmonnet/aweyuki/...`.
-   - Nếu Git báo `modify/delete` hoặc `rename/delete` conflict: **KHÔNG** xóa file ở `com/hzzmonnet/aweyukisu` hay `com/hzzmonnet/aweyuki`. Hãy lấy phần thay đổi logic từ upstream áp dụng vào file tương ứng trong `com/hzzmonnet/aweyuki/`, sau đó `git rm` file phía `org/bakasu/...` nếu nó bị tạo thừa.
+   - Upstream sửa trong `org/bakasu/bakasu/...`, trong khi repo này nằm ở `com/hzzmonet/aweyuki/...`.
+   - Nếu Git báo `modify/delete` hoặc `rename/delete` conflict: **KHÔNG** xóa file ở `com/hzzmonet/aweyukisu` hay `com/hzzmonet/aweyuki`. Hãy lấy phần thay đổi logic từ upstream áp dụng vào file tương ứng trong `com/hzzmonet/aweyuki/`, sau đó `git rm` file phía `org/bakasu/...` nếu nó bị tạo thừa.
 3. **Thay thế định danh từ upstream**:
-   - Mọi code mới lấy từ upstream có chứa `org.bakasu.bakasu` → đổi thành `com.hzzmonnet.aweyuki`.
-   - Mọi chuỗi/macro `BakaSU` / `bakasu` / `BAKASU` → đổi thành `AweYukiSU` / `aweyukisu` / `AWEYUKISU`.
-   - **Ngoại lệ**: Giữ nguyên URL dependency bên ngoài như `https://github.com/Baka-SU/android_bootimg` trong `userspace/ksud/Cargo.toml` và `Cargo.lock` (không đổi thành `AweYukiSU`, nếu không `Clippy check` trên CI sẽ lỗi clone).
+   - Mọi code mới lấy từ upstream có chứa `org.bakasu.bakasu` hoặc `com.resukisu.resukisu` → đổi thành `com.hzzmonet.aweyuki` (chú ý cả `org_bakasu_bakasu` / `org/bakasu/bakasu` trong JNI `manager/app/src/main/cpp/` → `com_hzzmonet_aweyuki` / `com/hzzmonet/aweyuki`).
+   - Mọi chuỗi/macro `BakaSU` / `bakasu` / `BAKASU` → đổi thành `AweYukiSU` / `aweyukisu` / `AWEYUKISU`; link repo `Baka-SU/BakaSU` → `AweYuki/AweYukiSU`.
+   - **Ngoại lệ**: Giữ nguyên URL dependency bên ngoài `https://github.com/Baka-SU/...` trong cả `userspace/ksud/{Cargo.toml,Cargo.lock}` lẫn `userspace/ksuinit/{Cargo.toml,Cargo.lock}` (không đổi thành `AweYukiSU` hay `AweYuki`, nếu không `Clippy check` trên CI sẽ lỗi clone).
 4. **Multi-manager**:
-   - Nếu upstream thêm code liên quan `CONFIG_KSU_MULTI_MANAGER_SUPPORT` trong `kernel/Kconfig`, `kernel/Kbuild`, `kernel/build-all.sh`, `kernel/tools/ddk_compatible.mk`, `kernel/manager/apk_sign.c` → bỏ qua hoặc loại bỏ phần multi-manager đó để giữ đúng cấu hình của AweYukiSU.
+   - Nếu upstream thêm code liên quan `CONFIG_KSU_MULTI_MANAGER_SUPPORT` trong `kernel/Kconfig`, `kernel/Kbuild`, `kernel/build-all.sh`, `kernel/tools/ddk_compatible.mk`, `kernel/manager/apk_sign.c`, `.github/workflows/ddk-lkm.yml` → bỏ qua hoặc loại bỏ phần multi-manager đó để giữ đúng cấu hình của AweYukiSU (nhưng vẫn giữ `#ifdef EXPECTED_SIZE` và `#ifdef EXPECTED_PR_BUILD_SIZE` trong `apk_sign.c`).
 
 Sau khi sửa xong từng file:
 ```bash
@@ -83,11 +83,11 @@ git add <file-đã-xử-lý>
    ```bash
    rg -n "^(<<<<<<<|=======|>>>>>>>)"
    ```
-2. Kiểm tra không còn sót `org.bakasu.bakasu` hoặc `CONFIG_KSU_MULTI_MANAGER_SUPPORT`:
+2. Kiểm tra không còn sót `org.bakasu.bakasu`, `com.resukisu.resukisu` hoặc `CONFIG_KSU_MULTI_MANAGER_SUPPORT`:
    ```bash
-   rg -n "org\.bakasu\.bakasu|CONFIG_KSU_MULTI_MANAGER_SUPPORT"
+   rg -n "org\.bakasu\.bakasu|org_bakasu_bakasu|com\.resukisu\.resukisu|CONFIG_KSU_MULTI_MANAGER_SUPPORT"
    ```
-3. Format lại Kotlin imports (tránh lỗi `Check Manager Format` / Spotless trên CI sau khi đổi `org.bakasu.bakasu` → `com.hzzmonnet.aweyuki`):
+3. Format lại Kotlin imports (tránh lỗi `Check Manager Format` / Spotless trên CI sau khi đổi `org.bakasu.bakasu` → `com.hzzmonet.aweyuki`):
    ```bash
    cd manager && ./gradlew spotlessApply
    ```

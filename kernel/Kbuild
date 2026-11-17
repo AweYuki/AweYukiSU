@@ -203,7 +203,7 @@ endif
 
 ifndef CONFIG_KSU_TRACEPOINT_HOOK
   # For old kernel, pkg observer maybe let system freeze
-  # https://github.com/AweYukiSU/AweYukiSU/issues/82#issuecomment-4015396974
+  # https://github.com/AweYuki/AweYukiSU/issues/82#issuecomment-4015396974
   #
   # 6.7- we use lsm_hooks to call ksu_handle_rename
   # 6.8+ we use pkg_observer to track_throne

@@ -12,7 +12,7 @@ If the issue still exists, please ensure you have tried the **latest CI build**,
 
 **You can export log from `Settings` page**
 
-When you [Open an issue](https://github.com/AweYukiSU/AweYukiSU/issues), you **must**:
+When you [Open an issue](https://github.com/AweYuki/AweYukiSU/issues), you **must**:
 
 - Select right issue template
 - Ensure it doesn't duplicate with current issues.
@@ -23,7 +23,7 @@ When you [Open an issue](https://github.com/AweYukiSU/AweYukiSU/issues), you **m
 
 ## Suggesting features
 
-[Open an issue](https://github.com/AweYukiSU/AweYukiSU/issues) describing the feature you want and your reason for it.
+[Open an issue](https://github.com/AweYuki/AweYukiSU/issues) describing the feature you want and your reason for it.
 
 ## Code
 

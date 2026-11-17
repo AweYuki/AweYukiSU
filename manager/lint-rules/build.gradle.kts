@@ -19,6 +19,6 @@ dependencies {
 
 tasks.jar {
     manifest {
-        attributes("Lint-Registry-v2" to "com.hzzmonnet.aweyuki.lint.BakaSuIssueRegistry")
+        attributes("Lint-Registry-v2" to "com.hzzmonet.aweyuki.lint.AweYukiSuIssueRegistry")
     }
 }

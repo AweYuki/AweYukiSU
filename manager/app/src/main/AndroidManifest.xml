@@ -41,7 +41,7 @@
         android:theme="@style/Theme.KernelSU"
         tools:targetApi="34"
         android:directBootAware="true"
-        android:zygotePreloadName="com.hzzmonnet.aweyuki.magica.AppZygotePreload">
+        android:zygotePreloadName="com.hzzmonet.aweyuki.magica.AppZygotePreload">
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
@@ -174,7 +174,7 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
             <intent-filter>
-                <action android:name="com.hzzmonnet.aweyuki.magica.LAUNCH" />
+                <action android:name="com.hzzmonet.aweyuki.magica.LAUNCH" />
             </intent-filter>
         </receiver>
     </application>

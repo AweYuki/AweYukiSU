@@ -1,0 +1,22 @@
+package com.hzzmonet.aweyuki.data.application
+
+import com.hzzmonet.aweyuki.Natives
+import com.hzzmonet.aweyuki.data.shell.KsuCliRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+
+class ApplicationControlRepository(
+    private val ksuCliRepository: KsuCliRepository,
+) {
+    suspend fun ensureManagerInstalled(): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching {
+            if (Natives.isFullFeatured() && ksuCliRepository.rootAvailable()) {
+                ksuCliRepository.install()
+            }
+        }
+    }
+
+    suspend fun reboot(reason: String = ""): Result<Unit> = withContext(Dispatchers.IO) {
+        runCatching { ksuCliRepository.reboot(reason) }
+    }
+}

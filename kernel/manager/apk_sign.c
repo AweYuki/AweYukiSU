@@ -32,7 +32,13 @@ struct sdesc {
 };
 
 static apk_sign_key_t apk_sign_keys[] = {
-    { EXPECTED_SIZE_AWEYUKISU, EXPECTED_HASH_AWEYUKISU }, /* AweYukiSU/AweYukiSU */
+    { EXPECTED_SIZE_AWEYUKISU, EXPECTED_HASH_AWEYUKISU }, /* AweYuki/AweYukiSU */
+#ifdef EXPECTED_SIZE
+    { EXPECTED_SIZE, EXPECTED_HASH }, // Custom
+#endif
+#ifdef EXPECTED_PR_BUILD_SIZE
+    { EXPECTED_PR_BUILD_SIZE, EXPECTED_PR_BUILD_HASH }, // Custom 2 (For PR build)
+#endif
 };
 
 static struct sdesc *init_sdesc(struct crypto_shash *alg)

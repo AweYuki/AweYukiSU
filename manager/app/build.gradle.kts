@@ -40,7 +40,7 @@ val isReleaseTask =
     project.gradle.startParameter.taskNames.any { it.contains("Release", ignoreCase = true) }
 
 android {
-    namespace = "com.hzzmonnet.aweyuki"
+    namespace = "com.hzzmonet.aweyuki"
 
     buildTypes {
         debug {
