@@ -39,10 +39,6 @@
 #include "preinit/preinit.h"
 #include "uapi/supercall.h"
 
-#ifdef CONFIG_ARM64
-#include "compat/apatch_conflict.h"
-#endif
-
 // if we are in Tracepoint hook, and won't enable PATCH_SYSCALL_DISPATCHER, check x86-64 hooks
 #if defined(CONFIG_KSU_TRACEPOINT_HOOK) && defined(__x86_64__) && !defined(CONFIG_KSU_X86_PATCH_SYSCALL_DISPATCHER)
 #include <asm/cpufeature.h>
@@ -240,9 +236,6 @@ int __init kernelsu_init(void)
         ksu_cred = NULL;
         return ret;
     }
-#ifdef CONFIG_ARM64
-    ksu_start_apatch_conflict_check();
-#endif
     ksu_selinux_init();
     ksu_feature_init();
     ksu_sulog_init();

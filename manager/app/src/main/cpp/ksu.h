@@ -42,8 +42,6 @@ int get_app_profile(struct app_profile* profile);
 
 void get_hook_type(char *buff);
 
-int get_kernel_patch_implement();
-
 bool set_dynamic_manager(unsigned int size, const char* hash);
 
 bool get_dynamic_manager(struct ksu_dynamic_manager_cmd* config);

@@ -541,39 +541,6 @@ NativeBridgeNP(getHookType, jstring) {
 	return GetEnvironment()->NewStringUTF(env, hook_type);
 }
 
-// Get KernelPatch implementation
-NativeBridgeNP(getKernelPatchImplementation, jobject) {
-	int type = get_kernel_patch_implement();
-
-	jclass cls = GetEnvironment()->FindClass(env,
-                                             "com/hzzmonet/aweyuki/Natives$KernelPatchImplementation");
-	if (cls == nullptr) {
-		jclass exCls = GetEnvironment()->FindClass(env, "java/lang/IllegalStateException");
-        GetEnvironment()->ThrowNew(env, exCls, "Could not find KernelPatchImplementation class");
-		return nullptr;
-	}
-
-	jmethodID valuesMethod = GetEnvironment()->GetStaticMethodID(env, cls, "values",
-                                                                 "()[Lcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;");
-	if (valuesMethod == nullptr) {
-		jclass exCls = GetEnvironment()->FindClass(env, "java/lang/IllegalStateException");
-		GetEnvironment()->ThrowNew(env, exCls,
-                                   "Could not find values() method in KernelPatchImplementation");
-		return nullptr;
-	}
-
-	jobjectArray valuesArray = (jobjectArray) GetEnvironment()->CallStaticObjectMethod(env, cls,
-																					   valuesMethod);
-	if (valuesArray == nullptr) {
-		jclass exCls = GetEnvironment()->FindClass(env, "java/lang/IllegalStateException");
-        GetEnvironment()->ThrowNew(env, exCls,
-                                   "Could not get valuesArray in KernelPatchImplementation");
-		return nullptr;
-	}
-
-	return GetEnvironment()->GetObjectArrayElement(env, valuesArray, (jsize) type);
-}
-
 NativeBridgeNP(getDynamicManager, jobject) {
 	struct ksu_dynamic_manager_cmd cmd;
 	bool result = get_dynamic_manager(&cmd);

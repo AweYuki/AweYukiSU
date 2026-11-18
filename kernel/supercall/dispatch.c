@@ -37,10 +37,6 @@
 #include "manager/manager_identity.h" // for change_manager_appid
 #endif
 
-#ifdef CONFIG_ARM64
-#include "compat/apatch_conflict.h"
-#endif
-
 #include "sulog/event.h"
 #include "sulog/fd.h"
 #include "supercall/supercall.h"
@@ -1086,24 +1082,6 @@ static int do_get_managers(void __user *arg)
     return 0;
 }
 
-static int do_get_kernel_patch_implement(void __user *arg)
-{
-    struct ksu_get_kernel_patch_implement cmd = { 0 };
-#ifdef CONFIG_ARM64
-    cmd.type = kernel_patch_type;
-#else
-    // Kernel Patch are only support aarch64 ABI
-    cmd.type = KERNEL_PATCH_NOT_FOUND;
-#endif
-
-    if (copy_to_user(arg, &cmd, sizeof(cmd))) {
-        pr_err("get_kernel_patch_implement: copy_to_user failed\n");
-        return -EFAULT;
-    }
-
-    return 0;
-}
-
 #ifdef CONFIG_KSU_SUSFS
 int ksu_handle_susfs_cmd(unsigned int cmd, void __user **arg)
 {
@@ -1486,12 +1464,6 @@ static const struct ksu_ioctl_cmd_map ksu_ioctl_handlers[] = {
         .cmd = KSU_IOCTL_GET_MANAGERS, 
         .name = "GET_MANAGERS", 
         .handler = do_get_managers, 
-        .perm_check = manager_or_root 
-    },
-    { 
-        .cmd = KSU_IOCTL_GET_KERNEL_PATCH_IMPLEMENT, 
-        .name = "GET_KERNEL_PATCH_IMPLEMENT", 
-        .handler = do_get_kernel_patch_implement, 
         .perm_check = manager_or_root 
     },
     { 

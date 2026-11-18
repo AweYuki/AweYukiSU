@@ -1,7 +1,6 @@
 package com.hzzmonet.aweyuki.domain.model
 
 import com.hzzmonet.aweyuki.KernelVersion
-import com.hzzmonet.aweyuki.Natives.KernelPatchImplementation
 
 data class ManagerRecord(
     val uid: Int,
@@ -25,7 +24,6 @@ data class KernelStatus(
     val isFullFeatured: Boolean = false,
     val isSELinuxPermissive: Boolean = false,
     val isOfficialSignature: Boolean = true,
-    val kernelPatchImplementation: KernelPatchImplementation = KernelPatchImplementation.NONE,
     val hookType: String = "",
     val isSafeMode: Boolean = false,
     val isLateLoadMode: Boolean = false,

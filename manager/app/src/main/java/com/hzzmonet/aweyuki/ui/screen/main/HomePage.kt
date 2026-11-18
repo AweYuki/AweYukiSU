@@ -82,7 +82,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.hzzmonet.aweyuki.BuildConfig
-import com.hzzmonet.aweyuki.Natives.KernelPatchImplementation
 import com.hzzmonet.aweyuki.R
 import com.hzzmonet.aweyuki.domain.model.HomeSystemInfo
 import com.hzzmonet.aweyuki.domain.model.KernelStatus
@@ -277,23 +276,6 @@ fun HomePage(
                     WarningCard(
                         message = stringResource(
                             id = R.string.home_pr_build_warning,
-                        ),
-                        icon = {
-                            Icon(
-                                imageVector = Icons.TwoTone.Error,
-                                contentDescription = null,
-                                tint = MaterialTheme.colorScheme.onErrorContainer,
-                                modifier = Modifier.size(18.dp),
-                            )
-                        },
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                }
-
-                if (uiState.systemStatus.kernelPatchImplementation == KernelPatchImplementation.OFFICIAL) {
-                    WarningCard(
-                        message = stringResource(
-                            R.string.conflict_with_apatch,
                         ),
                         icon = {
                             Icon(

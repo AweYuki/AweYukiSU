@@ -2,7 +2,6 @@ package com.hzzmonet.aweyuki.data.kernel
 
 import android.app.Application
 import com.hzzmonet.aweyuki.Natives
-import com.hzzmonet.aweyuki.Natives.KernelPatchImplementation
 import com.hzzmonet.aweyuki.data.shell.KsuCliRepository
 import com.hzzmonet.aweyuki.data.system.isSELinuxPermissive
 import com.hzzmonet.aweyuki.domain.model.KernelFeatureSettings
@@ -40,9 +39,6 @@ class KernelRepository(
             isOfficialSignature = runCatching {
                 ksuCliRepository.isOfficialSignature(application.packageResourcePath)
             }.getOrDefault(false),
-            kernelPatchImplementation = runCatching {
-                Natives.getKernelPatchImplementation()
-            }.getOrDefault(KernelPatchImplementation.NONE),
             hookType = runCatching { Natives.getHookType() }.getOrDefault(""),
             isSafeMode = runCatching { Natives.isSafeMode }.getOrDefault(false),
             isLateLoadMode = runCatching { Natives.isLateLoadMode }.getOrDefault(false),

@@ -69,47 +69,6 @@ object Natives {
     val isPrBuild: Boolean
         external get
 
-    enum class KernelPatchImplementation {
-        /**
-         * Kernel Patch was not found in this kernel
-         */
-        NONE,
-
-        /**
-         * Detected Kernel Patch official in this kernel
-         *
-         * Manager should warn user it may conflict with KernelSU
-         *
-         * @see <a href="https://github.com/bmax121/KernelPatch">https://github.com/bmax121/KernelPatch</a>
-         */
-        OFFICIAL,
-
-        /**
-         * Detected Rifsxd's Kernel Patch fork in this kernel
-         *
-         * Manager should warn user manager's built in kpm management will stop working
-         *
-         * @see <a href="https://github.com/KernelSU-Next/KPatch-Next">https://github.com/KernelSU-Next/KPatch-Next</a>
-         */
-        KPATCH_NEXT,
-
-        /**
-         * Detected SukiSU's Kernel Patch fork in this kernel
-         *
-         * Manager should warn user this feature are unstable and are not maintain for a long time
-         *
-         * @see <a href="https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch">https://github.com/SukiSU-Ultra/SukiSU_KernelPatch_patch</a>
-         */
-        SUKISU,
-    }
-
-    /**
-     * Get Kernel Patch implementation
-     * @return type
-     * @throws IllegalStateException when can't access KernelPatchImplementation enum
-     */
-    external fun getKernelPatchImplementation(): KernelPatchImplementation
-
     external fun uidShouldUmount(uid: Int): Boolean
 
     /**

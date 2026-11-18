@@ -272,13 +272,6 @@ void get_hook_type(char *buff) {
     }
 }
 
-int get_kernel_patch_implement() {
-    struct ksu_get_kernel_patch_implement cmd = {0};
-    if (ksuctl(KSU_IOCTL_GET_KERNEL_PATCH_IMPLEMENT, &cmd) != 0)
-        return 0;
-    return cmd.type;
-}
-
 bool get_dynamic_manager(struct ksu_dynamic_manager_cmd *cfg)
 {
 	if (!cfg) 

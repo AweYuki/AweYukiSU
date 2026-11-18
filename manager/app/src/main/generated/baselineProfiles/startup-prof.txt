@@ -59566,11 +59566,6 @@ HSPLcom/hzzmonet/aweyuki/Natives;-><clinit>()V
 HSPLcom/hzzmonet/aweyuki/Natives;-><init>()V
 HSPLcom/hzzmonet/aweyuki/Natives;->isDefaultUmountModules()Z
 HSPLcom/hzzmonet/aweyuki/Natives;->isFullFeatured()Z
-Lcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;
-HSPLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;->$values()[Lcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;
-HSPLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;-><clinit>()V
-HSPLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;-><init>(Ljava/lang/String;I)V
-HSPLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;->values()[Lcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;
 Lcom/hzzmonet/aweyuki/Natives$ManagerInfo;
 HSPLcom/hzzmonet/aweyuki/Natives$ManagerInfo;-><clinit>()V
 HSPLcom/hzzmonet/aweyuki/Natives$ManagerInfo;-><init>(II)V
@@ -60845,11 +60840,8 @@ HSPLcom/hzzmonet/aweyuki/domain/model/KernelFlashSession;-><init>(Ljava/lang/Str
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelFlashSession;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/hzzmonet/aweyuki/domain/model/FlashProgress;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 Lcom/hzzmonet/aweyuki/domain/model/KernelStatus;
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;-><clinit>()V
-HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;-><init>(ZLjava/lang/Integer;ILjava/lang/Integer;Ljava/lang/String;Ljava/lang/Boolean;Lcom/hzzmonet/aweyuki/KernelVersion;ZZZZLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;Ljava/lang/String;ZZZ)V
-HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;-><init>(ZLjava/lang/Integer;ILjava/lang/Integer;Ljava/lang/String;Ljava/lang/Boolean;Lcom/hzzmonet/aweyuki/KernelVersion;ZZZZLcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;Ljava/lang/String;ZZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->equals(Ljava/lang/Object;)Z
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->getHookType()Ljava/lang/String;
-HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->getKernelPatchImplementation()Lcom/hzzmonet/aweyuki/Natives$KernelPatchImplementation;
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->getKsuFullVersion()Ljava/lang/String;
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->getKsuVersion()Ljava/lang/Integer;
 HSPLcom/hzzmonet/aweyuki/domain/model/KernelStatus;->getLkmMode()Ljava/lang/Boolean;
