@@ -16,6 +16,7 @@ Skill này hướng dẫn quy trình đồng bộ (sync) thay đổi mới từ 
    - Tên dự án: `AweYukiSU`, repo GitHub: `AweYuki/AweYukiSU` (không để lọt `BakaSU` / `Baka-SU/BakaSU` mới từ upstream).
    - Package name & Application ID: `com.hzzmonet.aweyuki` (thay cho cả `org.bakasu.bakasu` lẫn `com.resukisu.resukisu` của upstream, bao gồm cả JNI symbols `Java_com_hzzmonet_aweyuki_*` trong `manager/app/src/main/cpp/`).
    - Không hỗ trợ multi-manager (`CONFIG_KSU_MULTI_MANAGER_SUPPORT` đã bị loại bỏ khỏi `kernel/` và `.github/workflows/`), nhưng giữ lại `#ifdef EXPECTED_SIZE` và `#ifdef EXPECTED_PR_BUILD_SIZE` trong `kernel/manager/apk_sign.c`.
+   - Không hỗ trợ KPM / KernelPatch (`kernel/compat/apatch_conflict.{c,h}`, `KSU_IOCTL_GET_KERNEL_PATCH_IMPLEMENT`, `KernelPatchImplementation` đã bị loại bỏ hoàn toàn).
 
 ---
 
@@ -72,6 +73,8 @@ Với từng file conflict:
    - **Ngoại lệ**: Giữ nguyên URL dependency bên ngoài `https://github.com/Baka-SU/...` trong cả `userspace/ksud/{Cargo.toml,Cargo.lock}` lẫn `userspace/ksuinit/{Cargo.toml,Cargo.lock}` (không đổi thành `AweYukiSU` hay `AweYuki`, nếu không `Clippy check` trên CI sẽ lỗi clone).
 4. **Multi-manager**:
    - Nếu upstream thêm code liên quan `CONFIG_KSU_MULTI_MANAGER_SUPPORT` trong `kernel/Kconfig`, `kernel/Kbuild`, `kernel/build-all.sh`, `kernel/tools/ddk_compatible.mk`, `kernel/manager/apk_sign.c`, `.github/workflows/ddk-lkm.yml` → bỏ qua hoặc loại bỏ phần multi-manager đó để giữ đúng cấu hình của AweYukiSU (nhưng vẫn giữ `#ifdef EXPECTED_SIZE` và `#ifdef EXPECTED_PR_BUILD_SIZE` trong `apk_sign.c`).
+5. **KPM / KernelPatch**:
+   - Nếu upstream sửa hoặc thêm lại code liên quan `apatch_conflict.{c,h}`, `KERNEL_PATCH_*`, `KSU_IOCTL_GET_KERNEL_PATCH_IMPLEMENT`, `KernelPatchImplementation`, `get_kernel_patch_implement` (trong `kernel/`, `uapi/`, `manager/app/src/main/cpp/`, hoặc Kotlin) → bỏ qua, không khôi phục lại.
 
 Sau khi sửa xong từng file:
 ```bash
@@ -83,9 +86,9 @@ git add <file-đã-xử-lý>
    ```bash
    rg -n "^(<<<<<<<|=======|>>>>>>>)"
    ```
-2. Kiểm tra không còn sót `org.bakasu.bakasu`, `com.resukisu.resukisu` hoặc `CONFIG_KSU_MULTI_MANAGER_SUPPORT`:
+2. Kiểm tra không còn sót `org.bakasu.bakasu`, `com.resukisu.resukisu`, `CONFIG_KSU_MULTI_MANAGER_SUPPORT`, hoặc `KernelPatchImplementation` / `apatch_conflict`:
    ```bash
-   rg -n "org\.bakasu\.bakasu|org_bakasu_bakasu|com\.resukisu\.resukisu|CONFIG_KSU_MULTI_MANAGER_SUPPORT"
+   rg -n "org\.bakasu\.bakasu|org_bakasu_bakasu|com\.resukisu\.resukisu|CONFIG_KSU_MULTI_MANAGER_SUPPORT|apatch_conflict|KernelPatchImplementation"
    ```
 3. Format lại Kotlin imports (tránh lỗi `Check Manager Format` / Spotless trên CI sau khi đổi `org.bakasu.bakasu` → `com.hzzmonet.aweyuki`):
    ```bash
