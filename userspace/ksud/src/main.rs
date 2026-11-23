@@ -12,6 +12,7 @@ mod boot_patch;
 mod cli_non_android;
 mod defs;
 mod feature_id;
+mod ipc_protocol;
 mod lkm_image;
 mod lkm_image_btf;
 

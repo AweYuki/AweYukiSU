@@ -675,4 +675,25 @@
     <string name="superuser_root_access_required">Root access is required to load applications.</string>
     <string name="superuser_service_start_failed">RootService failed to start. Retry to load applications.</string>
     <string name="superuser_packages_load_failed">Failed to load applications from RootService. Please retry.</string>
+    <string name="companion_apps_title">Companion Apps</string>
+    <string name="companion_apps_settings_summary">Manage trusted companion apps for ksud IPC</string>
+    <string name="companion_apps_trusted_section">Trusted companions</string>
+    <string name="companion_apps_installed_section">Installed apps</string>
+    <string name="companion_apps_manual_add">Add companion manually</string>
+    <string name="companion_apps_manual_add_summary">Authorize by package name and APK signing cert SHA-256</string>
+    <string name="companion_apps_package_name">Package name</string>
+    <string name="companion_apps_label_optional">Label (optional)</string>
+    <string name="companion_apps_cert_sha256">Signing cert SHA-256</string>
+    <string name="companion_apps_none_trusted">No trusted companion apps configured</string>
+    <string name="companion_apps_authorize_confirm_title">Authorize companion app?</string>
+    <string name="companion_apps_authorize_confirm_message">%1$s (%2$s) will be allowed to connect to the AweYukiSU ksud IPC service.</string>
+    <string name="companion_apps_revoke_confirm_title">Revoke companion trust?</string>
+    <string name="companion_apps_revoke_confirm_message">Remove %1$s from the companion allowlist? It will immediately lose IPC access.</string>
+    <string name="companion_apps_authorize_success">Companion app authorized</string>
+    <string name="companion_apps_authorize_failed">Failed to authorize companion app</string>
+    <string name="companion_apps_revoke_success">Companion trust revoked</string>
+    <string name="companion_apps_revoke_failed">Failed to revoke companion trust</string>
+    <string name="companion_apps_toggle_failed">Failed to update companion status</string>
+    <string name="companion_apps_status_enabled">Enabled · %1$s</string>
+    <string name="companion_apps_status_disabled">Disabled · %1$s</string>
 </resources>

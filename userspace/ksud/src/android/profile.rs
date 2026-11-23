@@ -16,10 +16,14 @@ pub fn set_sepolicy(pkg: String, policy: String) -> Result<()> {
 }
 
 pub fn get_sepolicy(pkg: String) -> Result<()> {
-    let policy_file = Path::new(defs::PROFILE_SELINUX_DIR).join(pkg);
-    let policy = std::fs::read_to_string(policy_file)?;
+    let policy = read_sepolicy(&pkg)?;
     println!("{policy}");
     Ok(())
+}
+
+pub(crate) fn read_sepolicy(pkg: &str) -> Result<String> {
+    let policy_file = Path::new(defs::PROFILE_SELINUX_DIR).join(pkg);
+    Ok(std::fs::read_to_string(policy_file)?)
 }
 
 // ksud doesn't guarteen the correctness of template, it just save
@@ -31,10 +35,14 @@ pub fn set_template(id: String, template: String) -> Result<()> {
 }
 
 pub fn get_template(id: String) -> Result<()> {
-    let template_file = Path::new(defs::PROFILE_TEMPLATE_DIR).join(id);
-    let template = std::fs::read_to_string(template_file)?;
+    let template = read_template(&id)?;
     println!("{template}");
     Ok(())
+}
+
+pub(crate) fn read_template(id: &str) -> Result<String> {
+    let template_file = Path::new(defs::PROFILE_TEMPLATE_DIR).join(id);
+    Ok(std::fs::read_to_string(template_file)?)
 }
 
 pub fn delete_template(id: String) -> Result<()> {
@@ -113,9 +121,17 @@ mod tests {
 }
 
 pub fn list_templates(name: bool, locale: Option<&str>) -> Result<()> {
+    for entry in collect_templates(name, locale)? {
+        println!("{entry}");
+    }
+    Ok(())
+}
+
+pub(crate) fn collect_templates(name: bool, locale: Option<&str>) -> Result<Vec<String>> {
+    let mut out = Vec::new();
     let templates = std::fs::read_dir(defs::PROFILE_TEMPLATE_DIR);
     let Ok(templates) = templates else {
-        return Ok(());
+        return Ok(out);
     };
     for template in templates {
         let template = template?;
@@ -134,12 +150,12 @@ pub fn list_templates(name: bool, locale: Option<&str>) -> Result<()> {
                     continue;
                 }
             };
-            println!("{template}");
+            out.push(template);
         } else if let Some(template) = template.file_name().to_str() {
-            println!("{template}");
+            out.push(template.to_string());
         }
     }
-    Ok(())
+    Ok(out)
 }
 
 pub fn apply_sepolies() -> Result<()> {

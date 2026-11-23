@@ -4,6 +4,7 @@ mod dynamic_manager;
 mod feature;
 mod hot_install;
 mod init_event;
+pub mod ipc;
 mod ksucalls;
 mod late_load;
 mod module;

@@ -4,11 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageInfo
 import android.os.IBinder
+import android.os.Process
 import android.os.UserHandle
 import android.os.UserManager
 import android.util.Log
 import com.hzzmonet.aweyuki.rootService.IKsuInterface
 import com.topjohnwu.superuser.ipc.RootService
+import org.json.JSONObject
 
 /**
  * @author ShirkNeko
@@ -48,6 +50,12 @@ class KsuService : RootService() {
                 list.subList(start, end)
             }
         }
+
+        override fun getCompanionMetadataJson(): String = JSONObject()
+            .put("managerPackage", packageName)
+            .put("serviceUid", Process.myUid())
+            .put("ipcSocketPath", "/dev/socket/aweyuki_ipc")
+            .toString()
     }
 
     override fun onBind(intent: Intent): IBinder = Stub()

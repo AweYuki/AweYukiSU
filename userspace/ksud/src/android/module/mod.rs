@@ -1054,7 +1054,7 @@ fn resolve_module_icon_path(
     }
 }
 
-fn list_module(path: &str) -> Vec<HashMap<String, String>> {
+pub(crate) fn list_module(path: &str) -> Vec<HashMap<String, String>> {
     // Load all module configs once to minimize I/O overhead
     let all_configs = match module_config::get_all_module_configs() {
         Ok(configs) => configs,

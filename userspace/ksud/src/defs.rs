@@ -85,6 +85,9 @@ mod android {
 
     pub const DYNAMIC_MANAGER: &str = concatcp!(WORKING_DIR, ".dynamic_manager");
     pub const SUSFS_CONFIG: &str = concatcp!(WORKING_DIR, ".susfs.json");
+    pub const COMPANION_ALLOWLIST_PATH: &str = concatcp!(WORKING_DIR, ".companion_allowlist");
+    pub const IPC_SERVER_LOCK_PATH: &str = concatcp!(WORKING_DIR, "ipc_server.lock");
+    pub const IPC_SOCKET_PATH: &str = "/dev/socket/aweyuki_ipc";
 
     #[derive(Serialize)]
     pub struct MountInfo {

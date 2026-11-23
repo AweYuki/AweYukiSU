@@ -7,7 +7,7 @@ use log::{LevelFilter, error, info};
 
 use crate::{
     android::{
-        debug, dynamic_manager, feature, init_event, ksucalls,
+        debug, dynamic_manager, feature, init_event, ipc, ksucalls,
         module::{self, module_config, regenerate_preinit},
         profile, sepolicy, su, sulog, susfs, uapi, umount_config, utils,
     },
@@ -54,6 +54,19 @@ enum Commands {
     /// Run sulog reader daemon. Not for user. Use `ksud debug sulogd` to launch daemon.
     #[command(hide = true)]
     Sulogd,
+
+    /// Run authenticated local UNIX domain socket IPC server
+    IpcServer {
+        /// Override UNIX socket path (default: /dev/socket/aweyuki_ipc)
+        #[arg(long)]
+        socket: Option<String>,
+    },
+
+    /// Manage companion app allowlist for ksud IPC
+    Companion {
+        #[command(subcommand)]
+        command: CompanionCmd,
+    },
 
     /// Trigger `boot-complete` event
     BootCompleted,
@@ -173,6 +186,43 @@ enum Commands {
     Initrc {
         #[command(subcommand)]
         command: Initrc,
+    },
+}
+
+#[derive(clap::Subcommand, Debug)]
+enum CompanionCmd {
+    /// Add or update a trusted companion app in .companion_allowlist
+    Add {
+        /// Android package name
+        #[arg(long)]
+        package: String,
+        /// APK signing certificate SHA-256 hex digest
+        #[arg(long)]
+        cert: String,
+        /// Optional Android UID / appId
+        #[arg(long)]
+        uid: Option<u32>,
+        /// Optional human-readable label
+        #[arg(long)]
+        label: Option<String>,
+        /// Add as disabled
+        #[arg(long)]
+        disabled: bool,
+    },
+    /// Remove a companion app from .companion_allowlist
+    Remove {
+        /// Android package name
+        #[arg(long)]
+        package: String,
+        /// Optional APK signing certificate SHA-256 hex digest
+        #[arg(long)]
+        cert: Option<String>,
+    },
+    /// List companion apps in .companion_allowlist
+    List {
+        /// Output JSON (always JSON)
+        #[arg(long)]
+        json: bool,
     },
 }
 
@@ -782,6 +832,56 @@ pub fn run() -> Result<()> {
             Ok(())
         }
         Commands::Sulogd => sulog::run_sulogd(),
+        Commands::IpcServer { socket } => ipc::run_server(socket.as_deref()),
+        Commands::Companion { command } => match command {
+            CompanionCmd::Add {
+                package,
+                cert,
+                uid,
+                label,
+                disabled,
+            } => {
+                let entry = crate::ipc_protocol::upsert_companion(
+                    std::path::Path::new(defs::COMPANION_ALLOWLIST_PATH),
+                    &package,
+                    &cert,
+                    uid,
+                    !disabled,
+                    label,
+                )?;
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "ok": true,
+                        "package": entry.package,
+                        "certSha256": entry.cert_sha256,
+                    })
+                );
+                Ok(())
+            }
+            CompanionCmd::Remove { package, cert } => {
+                let removed = crate::ipc_protocol::remove_companion(
+                    std::path::Path::new(defs::COMPANION_ALLOWLIST_PATH),
+                    &package,
+                    cert.as_deref(),
+                )?;
+                println!(
+                    "{}",
+                    serde_json::json!({
+                        "ok": true,
+                        "removed": removed,
+                    })
+                );
+                Ok(())
+            }
+            CompanionCmd::List { json: _ } => {
+                let allowlist = crate::ipc_protocol::load_allowlist(std::path::Path::new(
+                    defs::COMPANION_ALLOWLIST_PATH,
+                ))?;
+                println!("{}", serde_json::to_string(&allowlist)?);
+                Ok(())
+            }
+        },
         Commands::Profile { command } => match command {
             Profile::GetSepolicy { package } => profile::get_sepolicy(package),
             Profile::SetSepolicy { package, policy } => profile::set_sepolicy(package, policy),

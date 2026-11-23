@@ -4,6 +4,7 @@ import coil.ImageLoader
 import com.hzzmonet.aweyuki.BuildConfig
 import com.hzzmonet.aweyuki.data.AppSettingsRepository
 import com.hzzmonet.aweyuki.data.application.ApplicationControlRepository
+import com.hzzmonet.aweyuki.data.application.CompanionAppRepository
 import com.hzzmonet.aweyuki.data.application.DynamicManagerRepository
 import com.hzzmonet.aweyuki.data.count.CountRepository
 import com.hzzmonet.aweyuki.data.download.DownloadRepository
@@ -52,6 +53,7 @@ import com.hzzmonet.aweyuki.domain.text.TextTransliterator
 import com.hzzmonet.aweyuki.domain.usecase.AddModuleRepositoryUseCase
 import com.hzzmonet.aweyuki.domain.usecase.AddUmountPathUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ApplyLanguageUseCase
+import com.hzzmonet.aweyuki.domain.usecase.AuthorizeCompanionAppUseCase
 import com.hzzmonet.aweyuki.domain.usecase.BackupAllowlistUseCase
 import com.hzzmonet.aweyuki.domain.usecase.CalculateInstalledModuleSizeUseCase
 import com.hzzmonet.aweyuki.domain.usecase.CheckFlashModuleMountUseCase
@@ -106,6 +108,7 @@ import com.hzzmonet.aweyuki.domain.usecase.LoadModuleIconUseCase
 import com.hzzmonet.aweyuki.domain.usecase.LoadSettingsPlatformUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ObserveAssetDownloadUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ObserveCatalogModulesUseCase
+import com.hzzmonet.aweyuki.domain.usecase.ObserveCompanionAppsStateUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ObserveDownloadUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ObserveDynamicManagerStateUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ObserveInstalledModulesUseCase
@@ -122,6 +125,7 @@ import com.hzzmonet.aweyuki.domain.usecase.ObserveUmountStateUseCase
 import com.hzzmonet.aweyuki.domain.usecase.PeekOneshotScriptUseCase
 import com.hzzmonet.aweyuki.domain.usecase.PrepareScriptUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RebootUseCase
+import com.hzzmonet.aweyuki.domain.usecase.RefreshCompanionAppsUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RefreshDynamicManagerUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RefreshInstalledModulesUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RefreshModuleCatalogUseCase
@@ -135,6 +139,7 @@ import com.hzzmonet.aweyuki.domain.usecase.RemovePreferenceUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RemoveUmountPathUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RenameModuleRepositoryUseCase
 import com.hzzmonet.aweyuki.domain.usecase.ResolveModuleUpdateUseCase
+import com.hzzmonet.aweyuki.domain.usecase.RevokeCompanionAppUseCase
 import com.hzzmonet.aweyuki.domain.usecase.RunScriptUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SaveModuleActionLogUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SaveProfileTemplateUseCase
@@ -142,6 +147,7 @@ import com.hzzmonet.aweyuki.domain.usecase.SelectDynamicManagerUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetAppProfileUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetAppSepolicyUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetBooleanPreferenceUseCase
+import com.hzzmonet.aweyuki.domain.usecase.SetCompanionAppEnabledUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetDefaultUmountModulesUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetKernelUmountEnabledUseCase
 import com.hzzmonet.aweyuki.domain.usecase.SetManualDynamicManagerUseCase
@@ -167,6 +173,7 @@ import com.hzzmonet.aweyuki.ui.theme.CardConfig
 import com.hzzmonet.aweyuki.ui.theme.ThemeConfig
 import com.hzzmonet.aweyuki.ui.util.Shortcut
 import com.hzzmonet.aweyuki.ui.viewmodel.AppProfileViewModel
+import com.hzzmonet.aweyuki.ui.viewmodel.CompanionAppsViewModel
 import com.hzzmonet.aweyuki.ui.viewmodel.DynamicManagerViewModel
 import com.hzzmonet.aweyuki.ui.viewmodel.ExecuteModuleActionViewModel
 import com.hzzmonet.aweyuki.ui.viewmodel.FlashViewModel
@@ -281,6 +288,7 @@ val repositoryModule = module {
     singleOf(::HomeStateRepository)
     singleOf(::NetworkStatusRepository)
     singleOf(::NetworkRequestRepository)
+    singleOf(::CompanionAppRepository)
     singleOf(::DynamicManagerRepository)
     singleOf(::SulogRepository)
     singleOf(::BugreportRepository)
@@ -398,6 +406,11 @@ val useCaseModule = module {
     factoryOf(::SelectDynamicManagerUseCase)
     factoryOf(::SetManualDynamicManagerUseCase)
     factoryOf(::ClearDynamicManagerUseCase)
+    factoryOf(::ObserveCompanionAppsStateUseCase)
+    factoryOf(::RefreshCompanionAppsUseCase)
+    factoryOf(::AuthorizeCompanionAppUseCase)
+    factoryOf(::RevokeCompanionAppUseCase)
+    factoryOf(::SetCompanionAppEnabledUseCase)
     factoryOf(::ObserveSulogStateUseCase)
     factoryOf(::RefreshSulogUseCase)
     factoryOf(::EnableSulogUseCase)
@@ -473,6 +486,7 @@ val viewModelModule = module {
         )
     }
     viewModelOf(::SulogViewModel)
+    viewModelOf(::CompanionAppsViewModel)
     viewModelOf(::DynamicManagerViewModel)
     viewModelOf(::FlashViewModel)
     viewModelOf(::UmountManagerScreenViewModel)

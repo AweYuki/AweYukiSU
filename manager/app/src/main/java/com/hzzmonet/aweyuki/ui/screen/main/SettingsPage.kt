@@ -494,6 +494,17 @@ fun SettingsPage(bottomPadding: Dp) {
                                 )
                             }
 
+                            item {
+                                SettingsJumpPageWidget(
+                                    icon = Icons.TwoTone.VerifiedUser,
+                                    title = stringResource(R.string.companion_apps_title),
+                                    description = stringResource(R.string.companion_apps_settings_summary),
+                                    onClick = {
+                                        navigator.push(Route.CompanionApps)
+                                    },
+                                )
+                            }
+
                             item(visible = uiState.isKernelUmountEnabled) {
                                 SettingsJumpPageWidget(
                                     icon = Icons.TwoTone.FolderOff,

@@ -70,6 +70,7 @@ import com.hzzmonet.aweyuki.ui.overscroll.StretchOverscrollCompensationState
 import com.hzzmonet.aweyuki.ui.overscroll.rememberCustomOverscrollFactory
 import com.hzzmonet.aweyuki.ui.screen.AppProfileScreen
 import com.hzzmonet.aweyuki.ui.screen.AppProfileTemplateScreen
+import com.hzzmonet.aweyuki.ui.screen.CompanionAppsScreen
 import com.hzzmonet.aweyuki.ui.screen.DynamicManagerScreen
 import com.hzzmonet.aweyuki.ui.screen.ExecuteModuleActionScreen
 import com.hzzmonet.aweyuki.ui.screen.FlashIt
@@ -586,6 +587,17 @@ fun NavContainer(
                     useBlur = useBlur,
                 ) {
                     DynamicManagerScreen()
+                }
+            }
+            entry<Route.CompanionApps>(swipeDismiss = swipeBackDirection) {
+                ManagerNavEntry(
+                    interceptPredictiveBack = interceptPredictiveBack,
+                    onBack = onBack,
+                    themeConfig = themeConfig,
+                    backgroundRenderState = backgroundRenderState,
+                    useBlur = useBlur,
+                ) {
+                    CompanionAppsScreen()
                 }
             }
             entry<Route.KernelFlash>(swipeDismiss = NavSwipeDirection.None) { key ->

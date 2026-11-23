@@ -8,7 +8,9 @@ import android.content.pm.PackageInfo
 import android.os.IBinder
 import android.os.RemoteException
 import androidx.core.content.ContextCompat
+import com.hzzmonet.aweyuki.Natives
 import com.hzzmonet.aweyuki.data.shell.KsuCliRepository
+import com.hzzmonet.aweyuki.domain.model.CompanionMetadata
 import com.hzzmonet.aweyuki.domain.model.SuperUserLoadFailure
 import com.hzzmonet.aweyuki.rootService.IKsuInterface
 import com.topjohnwu.superuser.Shell
@@ -25,6 +27,7 @@ import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeoutOrNull
+import org.json.JSONObject
 
 class RootServiceException(val reason: SuperUserLoadFailure, cause: Throwable? = null) : IOException(reason.name, cause)
 
@@ -37,7 +40,27 @@ class RootServiceRepository(
 
     private data class Binding(val binder: IBinder, val connection: ServiceConnection)
 
-    suspend fun getInstalledPackages(): List<PackageInfo> = requestMutex.withLock {
+    suspend fun getInstalledPackages(): List<PackageInfo> = withBoundService { binder ->
+        readPackages(binder)
+    }
+
+    suspend fun getCompanionMetadata(): CompanionMetadata = withBoundService { binder ->
+        val service = IKsuInterface.Stub.asInterface(binder)
+        val json = JSONObject(service.companionMetadataJson)
+        val isManager = runCatching { Natives.isManager }.getOrDefault(false)
+        CompanionMetadata(
+            managerPackage = json.optString("managerPackage", application.packageName),
+            serviceUid = json.optInt("serviceUid", -1),
+            ipcSocketPath = json.optString("ipcSocketPath", "/dev/socket/aweyuki_ipc"),
+            ksuVersion = if (isManager) runCatching { Natives.version }.getOrNull() else null,
+            kernelUapiVersion = if (isManager) runCatching { Natives.kernelUAPIVersion }.getOrNull() else null,
+            hookType = runCatching { Natives.getHookType() }.getOrDefault(""),
+            isLkmMode = if (isManager) runCatching { Natives.isLkmMode }.getOrNull() else null,
+            isSelinuxHideEnabled = runCatching { Natives.isSelinuxHideEnabled() }.getOrDefault(false),
+        )
+    }
+
+    private suspend fun <T> withBoundService(block: (IBinder) -> T): T = requestMutex.withLock {
         withContext(Dispatchers.IO) {
             val shell = try {
                 ksuCliRepository.createRootShell()
@@ -51,12 +74,12 @@ class RootServiceRepository(
                 var binding = connectService(shell)
                 try {
                     try {
-                        readPackages(binding.binder)
+                        block(binding.binder)
                     } catch (_: RemoteException) {
                         // Retry the complete snapshot rather than combining pages from two services.
                         unbind(binding.connection)
                         binding = connectService(shell)
-                        readPackages(binding.binder)
+                        block(binding.binder)
                     }
                 } catch (error: CancellationException) {
                     throw error

@@ -671,4 +671,25 @@
     <string name="superuser_root_access_required">加载应用列表需要 Root 权限。</string>
     <string name="superuser_service_start_failed">RootService 启动失败，请重试以加载应用列表。</string>
     <string name="superuser_packages_load_failed">从 RootService 加载应用列表失败，请重试。</string>
+    <string name="companion_apps_title">配套应用</string>
+    <string name="companion_apps_settings_summary">管理允许访问 ksud IPC 的受信任配套应用</string>
+    <string name="companion_apps_trusted_section">已信任的配套应用</string>
+    <string name="companion_apps_installed_section">已安装的应用</string>
+    <string name="companion_apps_manual_add">手动添加配套应用</string>
+    <string name="companion_apps_manual_add_summary">通过包名与 APK 签名证书 SHA-256 授权</string>
+    <string name="companion_apps_package_name">包名</string>
+    <string name="companion_apps_label_optional">名称标签（可选）</string>
+    <string name="companion_apps_cert_sha256">签名证书 SHA-256</string>
+    <string name="companion_apps_none_trusted">暂未配置受信任的配套应用</string>
+    <string name="companion_apps_authorize_confirm_title">确认授权配套应用？</string>
+    <string name="companion_apps_authorize_confirm_message">%1$s（%2$s）将获准连接 AweYukiSU ksud IPC 服务。</string>
+    <string name="companion_apps_revoke_confirm_title">撤销配套应用信任？</string>
+    <string name="companion_apps_revoke_confirm_message">确定将 %1$s 从配套应用白名单中移除吗？移除后将立即失去 IPC 访问权限。</string>
+    <string name="companion_apps_authorize_success">已授权配套应用</string>
+    <string name="companion_apps_authorize_failed">授权配套应用失败</string>
+    <string name="companion_apps_revoke_success">已撤销配套应用信任</string>
+    <string name="companion_apps_revoke_failed">撤销配套应用信任失败</string>
+    <string name="companion_apps_toggle_failed">更新配套应用状态失败</string>
+    <string name="companion_apps_status_enabled">已启用 · %1$s</string>
+    <string name="companion_apps_status_disabled">已禁用 · %1$s</string>
 </resources>

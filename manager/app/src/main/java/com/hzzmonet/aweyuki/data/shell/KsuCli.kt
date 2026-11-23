@@ -166,6 +166,96 @@ class KsuCliRepository(context: Context) {
         return result
     }
 
+    data class CompanionCliEntry(
+        val packageName: String,
+        val certSha256: String,
+        val uid: Int,
+        val enabled: Boolean,
+        val label: String,
+    )
+
+    suspend fun listCompanions(): List<CompanionCliEntry> = withContext(Dispatchers.IO) {
+        val shell = getRootShell()
+        val result = shell.newJob()
+            .add("${getKsuDaemonPath()} companion list --json")
+            .to(ArrayList<String>(), null)
+            .exec()
+        if (!result.isSuccess) return@withContext emptyList()
+
+        runCatching {
+            val root = JSONObject(result.out.joinToString("\n"))
+            val array = root.optJSONArray("companions") ?: JSONArray()
+            buildList {
+                for (i in 0 until array.length()) {
+                    val obj = array.optJSONObject(i) ?: continue
+                    val pkg = obj.optString("package", "").trim()
+                    val cert = obj.optString("certSha256", "").trim().lowercase()
+                    if (pkg.isEmpty() || cert.isEmpty()) continue
+                    add(
+                        CompanionCliEntry(
+                            packageName = pkg,
+                            certSha256 = cert,
+                            uid = obj.optInt("uid", -1),
+                            enabled = obj.optBoolean("enabled", true),
+                            label = obj.optString("label", ""),
+                        ),
+                    )
+                }
+            }
+        }.getOrDefault(emptyList())
+    }
+
+    suspend fun addCompanion(
+        packageName: String,
+        certSha256: String,
+        uid: Int? = null,
+        label: String? = null,
+        disabled: Boolean = false,
+    ): Boolean = withContext(Dispatchers.IO) {
+        val normalizedCert = certSha256.replace(":", "").trim().lowercase()
+        val args = buildList {
+            add("companion")
+            add("add")
+            add("--package")
+            add(shellQuote(packageName.trim()))
+            add("--cert")
+            add(shellQuote(normalizedCert))
+            if (uid != null && uid >= 0) {
+                add("--uid")
+                add(uid.toString())
+            }
+            if (!label.isNullOrBlank()) {
+                add("--label")
+                add(shellQuote(label.trim()))
+            }
+            if (disabled) {
+                add("--disabled")
+            }
+        }.joinToString(" ")
+        val result = execKsud(args, true)
+        Log.i(TAG, "add companion ($packageName) result: $result")
+        result
+    }
+
+    suspend fun removeCompanion(
+        packageName: String,
+        certSha256: String? = null,
+    ): Boolean = withContext(Dispatchers.IO) {
+        val args = buildList {
+            add("companion")
+            add("remove")
+            add("--package")
+            add(shellQuote(packageName.trim()))
+            if (!certSha256.isNullOrBlank()) {
+                add("--cert")
+                add(shellQuote(certSha256.replace(":", "").trim().lowercase()))
+            }
+        }.joinToString(" ")
+        val result = execKsud(args, true)
+        Log.i(TAG, "remove companion ($packageName) result: $result")
+        result
+    }
+
     suspend fun isOfficialSignature(packageResourcePath: String): Boolean = withContext(Dispatchers.IO) {
         val shell = getRootShell()
         val out = shell.newJob()

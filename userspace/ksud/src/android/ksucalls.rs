@@ -562,3 +562,40 @@ pub fn umount_list_list() -> anyhow::Result<Vec<MountInfo>> {
 
     Ok(list)
 }
+
+pub fn get_manager_appid() -> anyhow::Result<u32> {
+    let mut cmd = uapi::ksu_get_manager_appid_cmd { appid: 0 };
+    ksuctl(uapi::KSU_IOCTL_GET_MANAGER_APPID_RUST, &raw mut cmd)?;
+    Ok(cmd.appid)
+}
+
+pub fn get_allow_list(allow: bool) -> anyhow::Result<Vec<u32>> {
+    let ioctl_cmd = if allow {
+        uapi::KSU_IOCTL_NEW_GET_ALLOW_LIST
+    } else {
+        uapi::KSU_IOCTL_NEW_GET_DENY_LIST
+    };
+    let mut probe = uapi::ksu_new_get_allow_list_cmd {
+        count: 0,
+        total_count: 0,
+        uids: [],
+    };
+    ksuctl(ioctl_cmd, &raw mut probe)?;
+    let total = usize::from(probe.total_count);
+    if total == 0 {
+        return Ok(Vec::new());
+    }
+    let header_bytes = std::mem::size_of::<uapi::ksu_new_get_allow_list_cmd>();
+    let total_bytes = header_bytes + total * std::mem::size_of::<u32>();
+    let mut buf = vec![0u8; total_bytes];
+    let cmd_ptr = buf.as_mut_ptr().cast::<uapi::ksu_new_get_allow_list_cmd>();
+    unsafe {
+        (*cmd_ptr).count = probe.total_count;
+        (*cmd_ptr).total_count = 0;
+    }
+    ksuctl(ioctl_cmd, cmd_ptr)?;
+    let count = unsafe { usize::from((*cmd_ptr).count) }.min(total);
+    let uids_ptr = unsafe { buf.as_ptr().add(header_bytes).cast::<u32>() };
+    let uids = unsafe { std::slice::from_raw_parts(uids_ptr, count) }.to_vec();
+    Ok(uids)
+}

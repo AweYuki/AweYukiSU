@@ -187,6 +187,9 @@ pub fn on_services() {
     }
 
     info!("on_services triggered!");
+    if let Err(e) = crate::android::ipc::ensure_ipc_server_running() {
+        warn!("failed to start ipc-server: {e:#}");
+    }
     run_stage("service", ScriptWait::NoWait);
 }
 

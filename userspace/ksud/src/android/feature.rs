@@ -266,6 +266,52 @@ pub fn set_feature(id: &str, value: u64) -> Result<()> {
     Ok(())
 }
 
+pub(crate) fn set_feature_value(id: &str, value: u64) -> Result<()> {
+    let feature_id = parse_feature_id(id)?;
+    if let Ok(state) = ksucalls::get_feature(feature_id as u32)
+        && state.forced
+    {
+        bail!(
+            "Feature '{}' is forced to {} by boot config. Direct modification is not allowed.",
+            feature_id.name(),
+            state.value
+        );
+    }
+    set_kernel_feature(feature_id, value)
+}
+
+pub(crate) fn query_feature(id: &str) -> Result<crate::ipc_protocol::FeatureInfo> {
+    let feature_id = parse_feature_id(id)?;
+    let state = ksucalls::get_feature(feature_id as u32)
+        .with_context(|| format!("Failed to get feature {id}"))?;
+    Ok(crate::ipc_protocol::FeatureInfo {
+        id: feature_id as u32,
+        name: feature_id.name().to_string(),
+        description: feature_id.description().to_string(),
+        value: state.value,
+        supported: state.supported,
+        forced: state.forced,
+    })
+}
+
+pub(crate) fn list_features_data() -> Vec<crate::ipc_protocol::FeatureInfo> {
+    FeatureId::ALL
+        .iter()
+        .map(|feature_id| {
+            let id = *feature_id as u32;
+            let state = ksucalls::get_feature(id).unwrap_or_default();
+            crate::ipc_protocol::FeatureInfo {
+                id,
+                name: feature_id.name().to_string(),
+                description: feature_id.description().to_string(),
+                value: state.value,
+                supported: state.supported,
+                forced: state.forced,
+            }
+        })
+        .collect()
+}
+
 pub fn list_features() {
     println!("Available Features:");
     println!("{}", "=".repeat(80));

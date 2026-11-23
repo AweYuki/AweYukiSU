@@ -40,18 +40,21 @@ pub fn load_umount_config() -> Result<()> {
 }
 
 pub fn list_umount() -> Result<()> {
-    let json_raw = read_config()?;
-
-    let output: Vec<MountInfo> = json_raw
-        .paths
-        .into_iter()
-        .map(|(path, flags)| MountInfo { path, flags })
-        .collect();
+    let output = list_umount_entries()?;
 
     let json_output = serde_json::to_string(&output)?;
     println!("{json_output}");
 
     Ok(())
+}
+
+pub(crate) fn list_umount_entries() -> Result<Vec<MountInfo>> {
+    let json_raw = read_config()?;
+    Ok(json_raw
+        .paths
+        .into_iter()
+        .map(|(path, flags)| MountInfo { path, flags })
+        .collect())
 }
 
 pub fn add_umount(target_path: &str, flags: u32) -> Result<()> {
